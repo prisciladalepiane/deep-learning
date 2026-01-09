@@ -1,4 +1,4 @@
-# Deep Learning para Aplicações de Inteligência Artificial com Python e C++
+# Projetos de Deep Learning para aplicações de Inteligência Artificial
 
 ## 1 - Implementando o Mecanismo de Atenção em Python
 
