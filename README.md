@@ -2,18 +2,15 @@
 
 ## 1 - Implementando o Mecanismo de Atenção em Python
 
-Projeto focado na implementação e compreensão do **mecanismo de atenção** dos **modelos Transformer**, inspirado no artigo _**Attention Is All You Need**_. O trabalho combina uma implementação em PyTorch com a construção manual dos principais componentes usando apenas NumPy, incluindo embeddings, função softmax, scaled dot-product attention e camada linear de saída. O objetivo é aprofundar o entendimento do funcionamento interno da atenção, do fluxo de dados entre Q, K e V e da geração de representações contextualizadas em sequências, priorizando clareza conceitual em vez de performance ou treinamento em larga escala.
+Projeto focado na implementação e compreensão do **mecanismo de atenção** dos **modelos Transformer**, inspirado no artigo _**Attention Is All You Need**_. O trabalho combina uma implementação em `PyTorch` com a construção manual dos principais componentes usando apenas NumPy, incluindo embeddings, função softmax, scaled dot-product attention e camada linear de saída. O objetivo é aprofundar o entendimento do funcionamento interno da atenção, do fluxo de dados entre Q, K e V e da geração de representações contextualizadas em sequências, priorizando clareza conceitual em vez de performance ou treinamento em larga escala.
 
 📁 [01-Mecanismo-Atencao.ipynb](01-Mecanismo-Atencao.ipynb)
 
 ## 2 - Modelo Transformer para Classificação de Sentimento em Texto
-Resumo objetivo do projeto, no nível “README / currículo técnico”:
 
 Este projeto desenvolve e compara três abordagens de **NLP para classificação de sentimentos em textos** (6 classes), utilizando dados do Twitter. O pipeline inclui **pré-processamento linguístico com `spaCy`** (tokenização, lematização e remoção de stopwords), tratamento de **desbalanceamento de classes** e avaliação com métricas clássicas de classificação.
 
-A primeira abordagem utiliza **TF-IDF combinado com uma rede neural totalmente conectada**, explorando vetorização estatística de texto e regularização para controle de overfitting. A segunda implementa um modelo **LSTM bidirecional**, com embeddings treináveis e modelagem sequencial do texto, permitindo capturar dependências temporais. A terceira e mais avançada abordagem realiza **fine-tuning de um modelo Transformer pré-treinado (DistilBERT multilingual)**, aplicando **transfer learning** com congelamento parcial das camadas e ajuste fino da cabeça de classificação.
-
-
+A primeira abordagem utiliza **TF-IDF combinado com uma rede neural totalmente conectada**, explorando vetorização estatística de texto e regularização para controle de overfitting. A segunda implementa um modelo **LSTM bidirecional**, com embeddings treináveis e modelagem sequencial do texto, permitindo capturar dependências temporais. A terceira abordagem realiza **fine-tuning de um modelo Transformer pré-treinado (DistilBERT multilingual)**, aplicando **transfer learning** com congelamento parcial das camadas e ajuste fino da cabeça de classificação.
 
 📁 [02-Classificacao-Sentimento.ipynb](01-Classificacao-Sentimentos.ipynb)
 
@@ -22,6 +19,11 @@ A primeira abordagem utiliza **TF-IDF combinado com uma rede neural totalmente c
 
 Lista de repositórios externos.
 
+## ⚙️ Machine Learning
+- [machine-learning](https://github.com/prisciladalepiane/machine-learning): Estudos e projetos com redes neurais, fundamentos de arquiteturas profundas, treinamento, avaliação e experimentos aplicados.
+
+## 🧠 Deep Learning
+- [deep-learning](https://github.com/prisciladalepiane/deep-learning): Estudos e projetos com redes neurais, fundamentos de arquiteturas profundas, treinamento, avaliação e experimentos aplicados.
 
 ## 🔬 Ciência de Dados com Python
 
