@@ -6,7 +6,14 @@ Projeto focado na implementação e compreensão do **mecanismo de atenção** d
 
 📁 [01-Mecanismo-Atencao.ipynb](01-Mecanismo-Atencao.ipynb)
 
-## 2 - Fine-Tuning de um Modelo Transformer para Classificação de Sentimento (Em Andamento)
+## 2 - Modelo Transformer para Classificação de Sentimento em Texto
+Resumo objetivo do projeto, no nível “README / currículo técnico”:
+
+Este projeto desenvolve e compara três abordagens de **NLP para classificação de sentimentos em textos** (6 classes), utilizando dados do Twitter. O pipeline inclui **pré-processamento linguístico com `spaCy`** (tokenização, lematização e remoção de stopwords), tratamento de **desbalanceamento de classes** e avaliação com métricas clássicas de classificação.
+
+A primeira abordagem utiliza **TF-IDF combinado com uma rede neural totalmente conectada**, explorando vetorização estatística de texto e regularização para controle de overfitting. A segunda implementa um modelo **LSTM bidirecional**, com embeddings treináveis e modelagem sequencial do texto, permitindo capturar dependências temporais. A terceira e mais avançada abordagem realiza **fine-tuning de um modelo Transformer pré-treinado (DistilBERT multilingual)**, aplicando **transfer learning** com congelamento parcial das camadas e ajuste fino da cabeça de classificação.
+
+
 
 📁 [02-Classificacao-Sentimento.ipynb](01-Classificacao-Sentimentos.ipynb)
 
