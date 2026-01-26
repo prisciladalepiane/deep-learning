@@ -83,3 +83,35 @@ Empilhamento de Camadas Convolucionais: Através da aplicação sucessiva de dif
 Na prática, a convolução é implementada através de bibliotecas de Deep Learning como TensorFlow ou PyTorch, que oferecem funções otimizadas para realizar essas operações de forma eficiente, aproveitando GPUs para acelerar o treinamento.
 
 A habilidade de aprender automaticamente os filtros (pesos) que são mais úteis para uma tarefa específica elimina a necessidade de engenharia de características manual, permitindo que a rede se adapte a uma ampla variedade de tarefas e conjuntos de dados.
+
+## Função de Ativação
+
+As funções de ativação auxiliam na construção de modelos de Deep Learning, incluindo as Redes Neurais Convolucionais (CNNs), ao introduzir não-linearidades nos modelos.
+
+Essa não-linearidade permite que as redes neurais aprendam e representem uma ampla variedade de funções complexas e resolvam tarefas não triviais, como classificação de imagens, reconhecimento de fala, e tradução de linguagem.
+
+Sem funções de ativação não-lineares, independentemente da quantidade de camadas em uma rede neural, o modelo ainda seria equivalente a uma única camada linear, limitando severamente o tipo de funções que poderia aprender.
+
+As funções de ativação permitem que cada neurônio decida se deve ser ativado ou não, contribuindo para a decisão final da rede.
+
+### Tipos de Funções de Ativação
+
+**1. ReLU (Rectified Linear Unit)**
+Simples, eficiente e comumente usada. Facilita a rápida convergência do treinamento e reduz o problema de desaparecimento do gradiente para valores positivos de entrada.
+
+**2. Sigmoid**
+Mapeia as entradas para um intervalo entre 0 e 1, tornando-a útil para problemas de classificação binária e modelagem de probabilidades. No entanto, é menos utilizada nas camadas ocultas devido aos problemas de desaparecimento do gradiente.
+
+**3. Tanh (Hyperbolic Tangent)**
+Semelhante à sigmoid, mas mapeia as entradas para um intervalo entre -1 e 1. Isso oferece uma distribuição de saída mais centrada em zero, o que muitas vezes melhora o desempenho do treinamento.
+
+**4. Softmax**
+Geralmente usada na camada de saída de modelos de classificação multiclasse. Converte um vetor de saídas em uma distribuição de probabilidades.
+
+**5. Leaky ReLU**
+Realiza tentativa de resolver o problema dos neurônios mortos da ReLU, permitindo um pequeno gradiente quando x é negativo.
+
+### Escolha da Função de Ativação
+A escolha da função de ativação depende de vários fatores, incluindo o tipo de problema (por exemplo, regressão, classificação binária, classificação multiclasse), a arquitetura específica do modelo e o comportamento desejado durante o treinamento. Experimentar com diferentes funções de ativação pode ser crucial para otimizar o desempenho do modelo.
+
+Na prática, a implementação de funções de ativação é simplificada pelo uso de frameworks de deep learning como TensorFlow e PyTorch, que oferecem essas funções como componentes prontos para uso, facilitando a experimentação e o desenvolvimento de modelos complexos.
