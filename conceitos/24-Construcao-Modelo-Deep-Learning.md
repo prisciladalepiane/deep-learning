@@ -115,3 +115,73 @@ Realiza tentativa de resolver o problema dos neurônios mortos da ReLU, permitin
 A escolha da função de ativação depende de vários fatores, incluindo o tipo de problema (por exemplo, regressão, classificação binária, classificação multiclasse), a arquitetura específica do modelo e o comportamento desejado durante o treinamento. Experimentar com diferentes funções de ativação pode ser crucial para otimizar o desempenho do modelo.
 
 Na prática, a implementação de funções de ativação é simplificada pelo uso de frameworks de deep learning como TensorFlow e PyTorch, que oferecem essas funções como componentes prontos para uso, facilitando a experimentação e o desenvolvimento de modelos complexos.
+
+## Operação de Pooling e Dropout
+
+### Operação de Pooling 
+
+Pooling é uma operação de amostragem de características que reduz as dimensões espaciais (altura e largura) dos mapas de características. Isso é feito para diminuir a quantidade de parâmetros e computação no modelo, ajudando assim a torná-lo mais eficiente e a reduzir o risco de sobreajuste.
+
+#### Tipos Comuns de Pooling
+
+**Max Pooling**: Seleciona o valor máximo de uma região específica dos dados de entrada. É o tipo mais comum de pooling, pois tende a destacar as características mais proeminentes.
+
+**Average Pooling**: Calcula a média dos valores em uma região específica dos dados de entrada, proporcionando uma representação suavizada das características.
+
+#### Benefícios do Pooling
+
+**Redução de Dimensionalidade**: Reduz significativamente o número de parâmetros e a quantidade de computação necessária na rede, sem perder características importantes.
+
+**Invariância a Translações Menores**: Ajuda a tornar o modelo mais robusto a pequenas variações e deslocamentos na posição das características dentro da imagem.
+
+### Operação de Dropout
+
+Dropout é uma técnica de regularização utilizada para prevenir o sobreajuste durante o treinamento de modelos de Deep Learning. Funciona "desligando" aleatoriamente um número de neurônios na rede durante o treinamento, o que significa que suas contribuições para a propagação para frente e para trás são temporariamente removidas.
+
+#### Como o Dropout Funciona?
+
+Durante o treinamento, em cada etapa de atualização, cada neurônio tem uma probabilidade p de ser temporariamente "descartado" e não contribuir para a propagação para frente e para trás.
+Essa probabilidade é um hiperparâmetro que pode ser ajustado. O efeito é que a rede se torna menos sensível às contribuições específicas de qualquer neurônio individual, o que ajuda a prevenir o sobreajuste.
+
+#### Benefícios do Dropout
+
+Redução de Sobreajuste: Ao prevenir que a rede dependa demais de qualquer neurônio individual, o dropout ajuda a rede a aprender representações mais robustas.
+
+Modelo de Ensemble Implícito: Cada etapa de treinamento com dropout pode ser vista como treinar uma "sub-rede" diferente. O processo de dropout simula um treinamento de ensemble de muitas dessas sub-redes diferentes, o que geralmente resulta em melhor generalização.
+
+Tanto o pooling quanto o dropout são facilmente implementáveis em frameworks modernos de Deep Learning, como TensorFlow e PyTorch. Esses frameworks oferecem funções prontas para uso que podem ser integradas em modelos de CNN com poucas linhas de código.
+
+**Pooling**: Geralmente é aplicado após uma ou várias camadas convolucionais para reduzir a dimensão espacial dos mapas de características.
+
+**Dropout**: Pode ser aplicado entre as camadas convolucionais, camadas totalmente conectadas, ou em ambos, para regularizar o modelo.
+
+A combinação dessas técnicas ajuda a construir modelos de CNN mais eficientes, rápidos e generalizáveis, facilitando o treinamento de redes profundas em conjuntos de dados complexos e extensos.
+
+## Camada Totalmente Conectada
+
+Uma camada totalmente conectada é uma camada de rede neural onde cada neurônio está conectado a todos os neurônios na camada anterior.
+
+Essas camadas são tradicionalmente posicionadas perto do final de uma CNN, após as camadas convolucionais e de pooling, para realizar tarefas de classificação ou regressão com base nas características extraídas pelas camadas anteriores.
+
+As camadas totalmente conectadas sintetizam as características extraídas pela rede, aprendendo combinações não-lineares dessas características para realizar tarefas específicas, como classificação.
+
+No contexto de classificação, a última camada totalmente conectada tem o mesmo número de neurônios que o número de classes do problema, preparando os dados para a decisão final de classificação.
+
+## Softmax
+
+Softmax é uma função de ativação que é comumente aplicada na última camada de um modelo de classificação para converter as saídas brutas da rede (também conhecidas como logits) em probabilidades. Cada valor de saída é transformado em um valor entre 0 e 1, e a soma de todos os valores de saída é igual a 1.
+
+Ao transformar os logits em probabilidades, o Softmax facilita a interpretação dos resultados da rede, indicando a probabilidade de cada classe ser a correta.
+
+A classe com a maior probabilidade pode ser escolhida como a previsão final do modelo.
+
+A combinação de camadas totalmente conectadas e a função Softmax é essencial para realizar tarefas de classificação. As camadas FC compactam e interpretam as características aprendidas pelas camadas convolucionais e de pooling, enquanto o Softmax transforma essas interpretações em decisões de classificação claras e probabilísticas.
+
+O design típico envolve uma ou mais camadas FC seguindo as camadas de convolução e pooling, terminando com uma camada de saída Softmax para classificação.
+
+
+Camadas FC: São implementadas após as operações de convolução e pooling, servindo para aprender as representações de alto nível das características extraídas.
+
+Softmax: Geralmente aplicado na última camada do modelo para interpretar as saídas da última camada FC como probabilidades de classe.
+
+Essa estrutura permite que as CNNs aprendam características visuais complexas através das camadas convolucionais e de pooling, bem como, tomem decisões precisas e baseadas em probabilidades sobre essas características através das camadas totalmente conectadas e da função Softmax.
