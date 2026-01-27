@@ -185,3 +185,83 @@ Camadas FC: São implementadas após as operações de convolução e pooling, s
 Softmax: Geralmente aplicado na última camada do modelo para interpretar as saídas da última camada FC como probabilidades de classe.
 
 Essa estrutura permite que as CNNs aprendam características visuais complexas através das camadas convolucionais e de pooling, bem como, tomem decisões precisas e baseadas em probabilidades sobre essas características através das camadas totalmente conectadas e da função Softmax.
+
+
+## Selecionando a Função de Erro
+
+A seleção da função de erro em Deep Learning é um passo crítico que deve ser feito durante a fase de planejamento e modelagem do seu projeto de aprendizado de máquina.
+
+Vamos destacar abaixo alguns aspectos chave e os critérios que você deve considerar para selecionar a função de erro apropriada:
+
+### 1. Definição do Problema
+
+A função de erro deve ser escolhida antes de começar o treinamento do modelo, pois ela orienta o processo de otimização, indicando como o modelo deve ajustar seus pesos para minimizar a discrepância entre as previsões e os valores reais.
+
+A escolha da função de erro depende fortemente do tipo de problema que você está tentando resolver (e.g., regressão, classificação binária, classificação multiclasse, detecção de objetos, etc.).
+
+### 2. Tipo de Problema de Aprendizado de Máquina
+
+* Regressão: Se o seu modelo visa prever valores contínuos, funções como Erro Quadrático Médio (MSE) ou Erro Absoluto Médio (MAE) são apropriadas.
+
+* Classificação Binária: Para problemas que envolvem duas classes, a Entropia Cruzada Binária é geralmente a escolha certa.
+
+* Classificação Multiclasse: Quando há mais de duas classes, a Entropia Cruzada Categórica é adequada.
+
+### 3. Distribuição dos Dados
+
+Se seus dados contêm outliers, você pode preferir funções de erro menos sensíveis a eles, como o MAE, em vez do MSE, que pode ser fortemente influenciado por outliers devido ao quadrado da diferença.
+
+### 4. Desempenho do Modelo
+
+Depois de uma primeira rodada de treinamento e avaliação, você pode decidir mudar a função de erro se o modelo não estiver performando como esperado. Por exemplo, se você notar que o modelo está muito confiante em suas previsões erradas, ajustar a função de erro ou adicionar uma componente de regularização pode ajudar.
+
+### 5. Requisitos Específicos do Projeto
+
+Em alguns casos, o objetivo do negócio ou as especificidades da aplicação podem requerer a minimização de um tipo específico de erro. Por exemplo, em sistemas de recomendação, minimizar os falsos positivos pode ser mais crítico do que os falsos negativos.
+
+A função de erro não é apenas um componente técnico do treinamento de modelos de Deep Learning; ela é uma expressão das prioridades e objetivos do seu projeto. Portanto, a escolha deve ser feita cuidadosamente, com uma compreensão clara do problema a ser resolvido, dos dados disponíveis e dos objetivos do projeto.
+
+Além disso, estar aberto a experimentar com diferentes funções de erro durante a fase de desenvolvimento pode levar a melhorias significativas no desempenho do modelo.
+
+
+## Selecionando o Otimizador
+
+A seleção do otimizador em Deep Learning é uma decisão que impacta diretamente a eficácia e a eficiência do treinamento do seu modelo.
+
+Assim como a função de erro, a escolha do otimizador deve ser feita durante as fases iniciais do desenvolvimento do modelo.
+
+Destacamos a seguir as considerações chave para selecionar o otimizador adequado:
+
+### 1. Antes do Início do Treinamento
+
+A escolha do otimizador é feita durante a fase de planejamento, antes de iniciar o treinamento do modelo. Isso porque o otimizador é responsável por ajustar os pesos da rede neural na direção que minimiza a função de perda.
+
+### 2. Tipo de Problema e Arquitetura do Modelo
+
+Alguns otimizadores são mais adequados para redes muito profundas ou arquiteturas complexas, devido à sua capacidade de mitigar problemas como o desvanecimento ou explosão de gradientes.
+
+Dependendo da natureza do problema (e.g., classificação, regressão, sequências temporais), alguns otimizadores podem levar a melhores resultados devido à forma como ajustam os pesos.
+
+### 3. Comportamento do Treinamento
+
+Se a velocidade de convergência é uma prioridade, otimizadores como Adam, que combinam o momento com taxas de aprendizado adaptativas, são frequentemente preferidos.
+
+Para problemas onde a estabilidade durante o treinamento é importante, pode ser preferível escolher otimizadores como SGD (Gradiente Descendente Estocástico) com decaimento de taxa de aprendizado.
+
+### 4. Limitações Computacionais
+
+Alguns otimizadores exigem mais memória ou capacidade de computação. Por exemplo, otimizadores que mantêm estimativas adaptativas para cada parâmetro (como Adam) podem exigir mais memória.
+
+### 5. Experiência e Experimentação
+
+A literatura e benchmarks podem fornecer orientações iniciais, mas a experimentação com diferentes otimizadores é essencial, pois o comportamento pode variar dependendo do conjunto de dados e da arquitetura específica do modelo.
+
+Após uma avaliação inicial, você pode optar por mudar o otimizador ou ajustar seus hiperparâmetros (como a taxa de aprendizado) com base no desempenho de validação do modelo.
+
+A escolha do otimizador deve ser feita com base em uma combinação de conhecimento teórico, experiência prática e experimentação.
+
+Diferentes otimizadores podem levar a variações significativas no tempo necessário para o modelo convergir e na qualidade do modelo treinado. 
+
+É recomendável considerar as características específicas do seu problema, as limitações de recursos e os objetivos do projeto ao selecionar um otimizador.
+
+Avaliações periódicas e ajustes durante o processo de desenvolvimento também são práticas recomendadas para otimizar o desempenho do seu modelo de Deep Learning.
