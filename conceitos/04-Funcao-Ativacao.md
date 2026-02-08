@@ -61,6 +61,33 @@ Apesar de sua importância, as funções de ativação não são isentas de desa
 
 > As funções de ativação são componentes essenciais das redes neurais em Deep Learning, permitindo que elas capturem e representem complexidades nos dados. A escolha da função de ativação apropriada depende da arquitetura da rede e da natureza do problema que está sendo tratado. 
 
+# Principais Funções
+
+## Sigmoid
+
+A Sigmoid é uma função de ativação amplamente utilizada nas primeiras redes neurais e ainda muito comum em problemas de classificação binária.
+
+- Valores muito negativos = saída próxima de 0
+- Valores muito positivos = saída próxima de 1
+- Valor próximo de 0 = saída ≈ 0.5
+
+### Quando usar Sigmoid?
+Indicado para:
+
+- Camada de saída em classificação binária;
+- Modelos de regressão logística;
+- Quando a saída precisa representar probabilidade.
+
+### Problemas da Sigmoid
+
+Desaparecimento do gradiente (_Vanishing Gradient_). Para valores muito altos ou muito baixos, a função entra em região de saturação: O gradiente se aproxima de 0,
+O aprendizado desacelera. Em redes profundas, as camadas iniciais quase não aprendem. 
+Isso foi um dos principais motivos para sua substituição por ReLU em camadas ocultas.
+
+Não recomendado para:
+- Camadas ocultas em redes profundas
+- Arquiteturas muito profundas (devido ao vanishing gradient)
+
 ## ReLU
 
 A **ReLU (Rectified Linear Unit)** é uma função de ativação definida por:
