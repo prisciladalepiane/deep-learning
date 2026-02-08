@@ -61,6 +61,61 @@ Apesar de sua importância, as funções de ativação não são isentas de desa
 
 > As funções de ativação são componentes essenciais das redes neurais em Deep Learning, permitindo que elas capturem e representem complexidades nos dados. A escolha da função de ativação apropriada depende da arquitetura da rede e da natureza do problema que está sendo tratado. 
 
+## ReLU
+
+A **ReLU (Rectified Linear Unit)** é uma função de ativação definida por:
+
+$$
+f(x) = \max(0, x)
+$$
+
+Ou seja:
+
+- Se \(x < 0\), saída = 0  
+- Se \(x \ge 0\), saída = \(x\)
+
+Ela introduz **não-linearidade** na rede neural, permitindo que modelos profundos aprendam relações complexas.
+
+### Vantagens da ReLU
+
+#### 1. Reduz o problema de vanishing gradient
+
+Diferente de sigmoid e tanh, a ReLU não satura para valores positivos grandes.
+
+Gradiente:
+
+- 0 para \(x < 0\)  
+- 1 para \(x > 0\)
+
+Isso facilita a propagação do gradiente em redes profundas.
+
+#### 2. Eficiência computacional
+
+A operação `max(0, x)` é simples e rápida, reduzindo custo computacional.
+
+#### 3. Induz esparsidade
+
+Como valores negativos são zerados:
+
+- Parte dos neurônios fica inativa  
+- A rede se torna mais esparsa  
+- Pode melhorar a generalização  
+
+#### 4. Convergência mais rápida
+
+Na prática, redes com ReLU tendem a treinar mais rapidamente do que com sigmoid ou tanh.
+
+### Limitação da ReLU
+
+**Dying ReLU**: Se muitos neurônios passam a receber apenas valores negativos,o neurônio deixa de aprender.  Isso pode ocorrer com learning rate alto ou má inicialização.
+
+### Quando usar ReLU?
+
+INdicado para, Redes profundas, MLPs, CNNs, Problemas de visão computacional, Quando se deseja treinamento estável e rápido. 
+
+É a ativação padrão para camadas ocultas em Deep Learning.
+
+
 ## LeakyReLu
 
 A função de ativação LeakyReLU (Leaky Rectified Linear Unit) é uma variação da função ReLU (Rectified Linear Unit), amplamente usada em redes neurais.
@@ -72,7 +127,7 @@ A LeakyReLU é útil para resolver o problema de neurônios inativos nas redes n
 
 ### O que é LeakyReLU?
 
-A LeakyReLU é definida pela fórmula f(x) = max(ax, x), onde a é um pequeno valor constante.
+A LeakyReLU é definida pela fórmula $$ f(x) = max(ax, x)$$, onde $a$ é um pequeno valor constante.
 
 Para valores positivos de x, funciona da mesma forma que a ReLU, mantendo x.
 
