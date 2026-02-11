@@ -1,4 +1,4 @@
-# Processamento de Linguagem Natural e Representações de Texto
+# PNL - Processamento de Linguagem Natural e Representações de Texto
 
 O Processamento de Linguagem Natural (PLN) é um campo de estudo e aplicação que fica na interseção da linguística, ciência da computação e inteligência artificial, dedicado a criar algoritmos que permitam aos computadores entender, interpretar e manipular a linguagem humana.
 
@@ -379,3 +379,22 @@ Além disso, modelos podem lutar para aplicar conhecimento a áreas altamente es
 
 O Zero-Shot Learning é uma área de pesquisa ativa e promissora que continua a expandir os limites do que é possível com PLN e aprendizado de máquina, permitindo que modelos entendam e realizem tarefas de maneira cada vez mais eficaz, mesmo sem treinamento específico.
 
+
+# LLMs (Large Language Models)
+## O que são LLMs?
+
+LLMs (_Large Language Models_) são modelos de linguagem treinados em grandes conjuntos de dados para aprender a representar e gerar texto. Esses modelos são treinados para aprender a capturar a estrutura e a semântica do linguagem natural, permitindo-lhes prever e gerar texto de alta qualidade.
+
+Os LLMs são baseados em redes neurais profundas (Deep Learning) e são treinados em grandes conjuntos de dados de texto, como artigos, livros, sites web, etc. Isso permite que os modelos aprendam a capturar a estrutura e a semântica do linguagem natural, permitindo-lhes prever e gerar texto de alta qualidade.
+
+Os LLMs têm várias aplicações, incluindo:
+
+**Geração de texto**: os LLMs podem ser usados para gerar texto de alta qualidade, como resumos, respostas a perguntas, etc.
+
+**Tradução**: os LLMs podem ser usados para traduzir texto de uma língua para outra.
+
+**Classificação de texto**: os LLMs podem ser usados para classificar texto em categorias específicas, como spam vs. não spam.
+
+**Sentiment Analysis**: os LLMs podem ser usados para analisar o tom e a opinião do texto.
+
+Os LLMs são treinados usando técnicas de aprendizado de máquina, como backpropagation e gradient descent, para ajustar os parâmetros dos modelos para melhorar a performance.
