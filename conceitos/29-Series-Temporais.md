@@ -128,3 +128,99 @@ Características da Não Estacionariedade:
 
  - Ajuda a determinar a estrutura adequada do modelo para prever a série temporal.
 Esses conceitos são fundamentais na análise de séries temporais, pois ajudam a entender a estrutura dos dados e a escolher os métodos apropriados para modelagem e previsão.
+
+
+## Fundamentos da Modelagem de Séries Temporais
+
+A modelagem de séries temporais é uma técnica estatística usada para analisar e prever valores futuros com base em dados observados ao longo do tempo.
+
+### 1. Identificação e Diagnóstico da Série Temporal
+
+#### a. Visualização dos Dados
+
+**Plotar a série temporal**: Uma visualização inicial ajuda a identificar tendências, sazonalidades, ciclos e outliers.
+Diagramas de dispersão: Úteis para observar padrões de autocorrelação.
+
+#### b. Análise Exploratória de Dados (EDA)
+
+**Estatísticas descritivas**: Média, mediana, variância, desvio padrão.
+**Decomposição da série:** Separar a série em componentes de tendência, sazonalidade e resíduo.
+
+#### c. Teste de Estacionaridade
+
+**Teste de Dickey-Fuller aumentado (ADF)**: Testa a hipótese nula de que a série é não estacionária.
+**Teste KPSS (Kwiatkowski-Phillips-Schmidt-Shin)**: Testa a hipótese nula de que a série é estacionária.
+
+### 2. Transformações e Preparação dos Dados
+
+#### a. Diferença (Differencing)
+
+Usada para remover a tendência e tornar a série estacionária. Diferenças de primeira ordem e de ordem superior podem ser aplicadas.
+
+#### b. Transformação Logarítmica
+
+Estabiliza a variância em séries com crescimento exponencial ou heterocedasticidade.
+
+#### c. Remoção de Sazonalidade
+
+Ajuste sazonal para remover padrões sazonais regulares.
+
+### 3. Seleção de Modelos
+#### a. Modelos Autoregressivos (AR)
+
+**AR(p)**: Modela a série como uma função linear de seus valores passados (lags).
+#### b. Modelos de Média Móvel (MA)
+
+**MA(q)**: Modela a série como uma função linear de erros passados.
+
+#### c. Modelos ARMA e ARIMA
+
+**ARMA(p,q)**: Combinação de AR e MA para séries estacionárias.
+**ARIMA(p,d,q)**: Extensão do ARMA que inclui diferenciação (d) para tornar a série estacionária.
+
+##### d. Modelos Sazonais (SARIMA)
+
+**SARIMA(p,d,q)(P,D,Q)[s]**: Extensão do ARIMA que inclui componentes sazonais.
+
+#### e. Modelos Exponenciais
+
+**Suavização Exponencial Simples**: Para séries sem tendência ou sazonalidade.
+**Suavização Exponencial Dupla**: Para séries com tendência.
+**Suavização Exponencial Tripla (Holt-Winters)**: Para séries com tendência e sazonalidade.
+
+### 4. Estimação dos Parâmetros
+#### a. Métodos de Estimação
+
+**Máxima verossimilhança:** Estima parâmetros maximizando a probabilidade dos dados observados.
+**Método dos momentos**: Usa momentos estatísticos (média, variância) para estimar parâmetros.
+
+### 5. Diagnóstico do Modelo
+#### a. Análise de Resíduos
+**Autocorrelação dos resíduos**: Resíduos devem ser não correlacionados (ruído branco).
+**Teste Ljung-Box:** Avalia a independência dos resíduos.
+**Normalidade dos resíduos**: Verificar se os resíduos seguem uma distribuição normal.
+
+### 6. Validação e Previsão
+#### a. Divisão dos Dados
+
+**Conjunto de treino e teste**: Dividir os dados para treinar o modelo e testar sua performance.
+
+#### b. Métricas de Avaliação
+
+**Erro Absoluto Médio (MAE)**: Média das diferenças absolutas entre valores observados e previstos.
+
+**Erro Quadrático Médio (MSE)**: Média dos quadrados das diferenças entre valores observados e previstos.
+
+**Raiz do Erro Quadrático Médio (RMSE)**: Raiz quadrada do MSE.
+
+**Erro Percentual Absoluto Médio (MAPE)**: Média dos erros percentuais absolutos.
+
+### 7. Aplicação do Modelo e Implementação
+#### a. Previsão
+
+Usar o modelo ajustado para prever valores futuros.
+
+#### b. Monitoramento e Atualização
+
+Continuar monitorando a precisão do modelo e atualizar com novos dados conforme necessário.
+Esses fundamentos fornecem um guia abrangente para a modelagem de séries temporais, permitindo a análise e previsão precisas de dados temporais.
