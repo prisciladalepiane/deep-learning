@@ -474,3 +474,13 @@ Permitem o processamento paralelo da sequência, aumentando a eficiência comput
 
 Facilmente integráveis com diferentes tipos de dados e variáveis exógenas.
 Os mecanismos de atenção e transformers são ferramentas poderosas para modelagem de séries temporais, capazes de superar muitas limitações dos métodos tradicionais e das RNNs. Sua capacidade de considerar toda a sequência simultaneamente e de ajustar pesos dinamicamente permite capturar dependências de longo prazo e padrões complexos de maneira eficiente e eficaz.
+
+## Por que fazemos o shift na Série Temporal?
+
+A função `shift(1)` foi utilizada para engenharia de atributos nos dados financeiros com um propósito muito específico: ela ajusta os dados um período no tempo para frente (por exemplo, um dia no caso de dados diários). Isso é feito por algumas razões principais:
+
+**Evitar Vazamento de Dados (Data Leakage):** Ao usar técnicas de Machine Learning em séries temporais financeiras, é importante que o modelo não tenha acesso a informações futuras no momento de fazer previsões. Usando shift(1), você garante que as previsões para um determinado dia são feitas apenas com dados disponíveis até o dia anterior, evitando que o modelo "veja o futuro" e, assim, obtenha uma avaliação realista de seu desempenho.
+
+**Relacionamento Temporal**: Em muitos casos, o valor de um ativo em um dado momento é mais diretamente influenciado pelos valores imediatamente anteriores do que pelos valores atuais. Por exemplo, ao prever o preço de fechamento, pode ser mais relevante saber o preço de fechamento do dia anterior do que o preço de abertura do mesmo dia. O shift permite alinhar esses valores de modo que as características (features) reflitam adequadamente as dependências temporais.
+
+**Uso em Cálculos de Indicadores Técnicos**: Muitos dos indicadores técnicos usados na análise de dados financeiros, como médias móveis, índice de força relativa (RSI) ou preço médio ponderado pelo volume (VWAP), são calculados com base nos valores anteriores. O shift(1) é usado para alinhar esses indicadores de forma que representem o valor calculado até o dia anterior, garantindo que o modelo utilize informações consistentes e alinhadas temporalmente.
