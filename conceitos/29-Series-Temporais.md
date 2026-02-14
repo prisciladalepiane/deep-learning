@@ -584,3 +584,73 @@ A arquitetura Temporal Fusion Transformer (TFT) é um modelo de rede neural proj
 **Regularização e Componentes Adicionais**: Para melhorar a generalização, o TFT pode incluir componentes de regularização como dropout. Além disso, técnicas de aprendizado profundo, como normalização em lote, também podem ser incorporadas para estabilizar e acelerar o treinamento.
 
 > O TFT é particularmente adequado para aplicações onde as séries temporais são influenciadas por uma variedade de fatores de entrada e onde a interpretabilidade do modelo é essencial. Ele tem sido aplicado com sucesso em previsões financeiras, previsão de demanda e outras áreas onde as previsões precisas de séries temporais são fundamentais.
+
+## Métricas de avaliação para modelos de Séries Temporais
+
+Avaliar a performance de modelos de séries temporais é essencial para garantir a precisão e eficácia das previsões. Existem várias métricas de avaliação usadas para medir o desempenho dos modelos de séries temporais.
+
+Apresentamos a seguir algumas das métricas mais comuns e importantes:
+
+### 1. Erro Absoluto Médio (MAE - Mean Absolute Error)
+O MAE mede a média das diferenças absolutas entre os valores previstos e os valores reais. É uma métrica simples que indica, em média, o quanto as previsões diferem dos valores reais.
+
+Vantagens: Fácil de interpretar e não amplifica grandes erros.\
+Desvantagens: Não diferencia entre erros positivos e negativos.
+
+### 2. Erro Quadrático Médio (MSE - Mean Squared Error)
+
+O MSE mede a média dos quadrados das diferenças entre os valores previstos e os valores reais. Penaliza mais os grandes erros devido à elevação ao quadrado.
+
+Vantagens: Penaliza grandes erros mais severamente, útil para problemas onde grandes erros são mais indesejáveis.\
+Desvantagens: Pode ser influenciado por outliers.
+
+### 3. Raiz do Erro Quadrático Médio (RMSE - Root Mean Squared Error)
+
+O RMSE é a raiz quadrada do MSE. Mantém as mesmas unidades dos valores previstos e reais, facilitando a interpretação.
+
+Vantagens: Fácil de interpretar e compara diretamente com os valores reais.\
+Desvantagens: Influenciado por grandes erros, assim como o MSE.
+
+### 4. Erro Percentual Absoluto Médio (MAPE - Mean Absolute Percentage Error)
+
+O MAPE mede a média dos erros absolutos em termos percentuais em relação aos valores reais.
+
+Vantagens: Fácil de interpretar em termos percentuais.\
+Desvantagens: Pode ser distorcido por valores reais próximos de zero.
+
+### 5. Erro de Previsão de Raiz Média Quadrática Normalizado (NRMSE - Normalized Root Mean Squared Error)
+
+O NRMSE é a RMSE normalizada pela amplitude dos valores reais, permitindo a comparação entre diferentes séries temporais.
+
+Vantagens: Útil para comparar a precisão entre diferentes séries temporais.\
+Desvantagens: A normalização pode ser sensível à amplitude dos dados.
+
+
+### 6. R² (Coeficiente de Determinação)
+O R² mede a proporção da variabilidade nos dados que é explicada pelo modelo. Varia de 0 a 1, onde 1 indica um modelo perfeito.
+
+Vantagens: Facilmente interpretável e comumente usado.\
+Desvantagens: Pode ser enganoso se usado com séries temporais não estacionárias.
+
+### 7. Erro Quadrático Médio de Previsão (MSPE - Mean Squared Prediction Error)
+
+O MSPE é semelhante ao MSE, mas é calculado especificamente para dados de teste ou validação, avaliando a performance do modelo fora da amostra de treinamento.
+
+Vantagens: Focado na capacidade de generalização do modelo.\
+Desvantagens: Pode ser influenciado por valores atípicos.
+
+### 8. Critério de Informação de Akaike (AIC - Akaike Information Criterion)
+
+O AIC é usado para comparar diferentes modelos e selecionar o melhor. Penaliza a complexidade do modelo para evitar overfitting.
+
+Vantagens: Útil para seleção de modelos.\
+Desvantagens: Requer a verossimilhança do modelo, que pode ser difícil de calcular para modelos complexos.
+
+### 9. Critério de Informação Bayesiano (BIC - Bayesian Information Criterion)
+
+O BIC é semelhante ao AIC, mas penaliza mais severamente a complexidade do modelo.
+
+Vantagens: Útil para seleção de modelos com uma penalização mais forte para complexidade.\
+Desvantagens: Requer a verossimilhança do modelo e o tamanho da amostra.
+
+Escolher a métrica de avaliação certa é essencial para entender o desempenho do modelo de séries temporais e garantir que ele esteja alinhado com os objetivos específicos da aplicação. É comum usar várias métricas em conjunto para obter uma visão mais completa do desempenho do modelo.
