@@ -1,7 +1,5 @@
 # Deep Learning para Séries Temporais
 
-## Definição e Características de Séries Temporais
-
 Uma série temporal é uma sequência de observações de uma variável, coletadas e registradas em intervalos de tempo específicos e regulares. Essas observações podem ser diárias, semanais, mensais, anuais, entre outros intervalos.
 
 Séries temporais são comuns em diversas áreas como economia, finanças, meteorologia, ciências sociais e engenharia, onde é necessário analisar e prever comportamentos ao longo do tempo.
@@ -484,3 +482,105 @@ A função `shift(1)` foi utilizada para engenharia de atributos nos dados finan
 **Relacionamento Temporal**: Em muitos casos, o valor de um ativo em um dado momento é mais diretamente influenciado pelos valores imediatamente anteriores do que pelos valores atuais. Por exemplo, ao prever o preço de fechamento, pode ser mais relevante saber o preço de fechamento do dia anterior do que o preço de abertura do mesmo dia. O shift permite alinhar esses valores de modo que as características (features) reflitam adequadamente as dependências temporais.
 
 **Uso em Cálculos de Indicadores Técnicos**: Muitos dos indicadores técnicos usados na análise de dados financeiros, como médias móveis, índice de força relativa (RSI) ou preço médio ponderado pelo volume (VWAP), são calculados com base nos valores anteriores. O shift(1) é usado para alinhar esses indicadores de forma que representem o valor calculado até o dia anterior, garantindo que o modelo utilize informações consistentes e alinhadas temporalmente.
+
+# Modelo Temporal Fusion Transformer
+
+## Construção do Modelo Temporal Fusion Transformer 
+
+O Temporal Fusion Transformer (TFT) é um modelo de Deep Learning avançado desenvolvido para lidar com séries temporais complexas, capturando tanto dependências temporais de curto quanto de longo prazo, além de incorporar múltiplas variáveis exógenas. A construção de um TFT envolve várias etapas, desde a preparação dos dados até a implementação do modelo e ajuste dos hiperparâmetros.
+
+Aqui estão os passos detalhados para construir um modelo Temporal Fusion Transformer:
+
+### 1. Preparação dos Dados
+
+#### a. Coleta e Limpeza dos Dados
+
+**Coleta**: Reúna os dados históricos e as variáveis exógenas relevantes.
+**Limpeza**: Trate valores ausentes, remova outliers e normalize/escale os dados.
+
+#### b. Divisão dos Dados
+
+**Treinamento, Validação e Teste**: Divida os dados em conjuntos de treinamento, validação e teste. Uma divisão comum é 70% para treinamento, 15% para validação e 15% para teste.
+
+#### c. Codificação das Variáveis
+
+**Codificação Temporal**: Adicione características temporais, como dia da semana, mês, feriados, etc.
+**Codificação de Variáveis Categóricas**: Use técnicas de codificação, como one-hot encoding, para variáveis categóricas.
+
+### 2. Definição da Estrutura do TFT
+
+#### a. Entrada do Modelo
+
+- **Entradas Históricas**: Sequências de dados históricos que serão usadas para fazer previsões.
+- **Entradas Futuras**: Variáveis exógenas futuras conhecidas (como feriados, tendências econômicas, etc.).
+
+#### b. Camadas do TFT
+
+**1. Embedding Layer:** Para variáveis categóricas e temporais, embeddings são usados para transformar essas variáveis em vetores de alta dimensão.
+
+**2. Gated Residual Network (GRN):** Captura interações complexas entre variáveis. Consiste em uma combinação de redes totalmente conectadas, dropout, normalização de camada e mecanismos de gating.
+
+**3. Atenção Multi-Cabeça:** Captura dependências de longo prazo na série temporal.
+
+**4. Camadas LSTM:** Capturam dependências de curto prazo e fornecem representações seqüenciais.
+
+**5. Atenção Temporal:** Ajusta os pesos das características temporais dinamicamente.
+
+### 3. Implementação do Modelo
+
+Bibliotecas Necessárias: Utilize bibliotecas como TensorFlow ou PyTorch. 
+
+### 4. Treinamento do Modelo
+
+#### a. Configuração do Treinamento
+
+**Função de Custo**: Normalmente, a função de custo é o erro quadrático médio (MSE) ou outra função de perda apropriada.
+
+**Otimizador**: Adam ou outros otimizadores baseados em gradiente.
+
+#### b. Loop de Treinamento
+
+
+### 5. Avaliação e Ajuste
+#### a. Avaliação do Modelo
+
+**Métricas de Desempenho**: Use métricas como RMSE, MAE, MAPE para avaliar o desempenho no conjunto de teste.
+
+#### b. Ajuste de Hiperparâmetros
+
+**Busca em Grade ou Aleatória**: Ajuste hiperparâmetros como a taxa de aprendizado, número de camadas, tamanho dos embeddings, etc.
+
+#### c. Diagnóstico de Resíduos
+
+**Análise de Resíduos**: Verifique os resíduos para identificar padrões não capturados pelo modelo e ajustar a estrutura ou os hiperparâmetros conforme necessário.
+
+### 6. Implementação em Produção
+
+#### a. Implementação
+
+**Script de Previsão**: Desenvolva scripts para carregar o modelo treinado e fazer previsões com novos dados.
+Automação: Configure pipelines de dados para alimentar continuamente novos dados ao modelo e gerar previsões.
+
+### b. Monitoramento
+
+**Monitoramento Contínuo**: Monitorar o desempenho do modelo em produção e ajustar conforme necessário com novos dados ou re-treinamentos.
+
+> Construir um modelo Temporal Fusion Transformer envolve uma combinação de preparação cuidadosa dos dados, definição da arquitetura do modelo, treinamento meticuloso e avaliação rigorosa. Com essas etapas, você pode desenvolver um modelo poderoso para previsão de séries temporais complexas, capaz de capturar tanto dependências de curto quanto de longo prazo.
+
+## Arquitetura Temporal Fusion Transformer
+
+A arquitetura Temporal Fusion Transformer (TFT) é um modelo de rede neural projetado para lidar com séries temporais multivariadas, integrando dados históricos e conhecimentos específicos do contexto para fazer previsões precisas. Aqui estão os principais componentes da arquitetura TFT:
+
+**Camada de Entrada e Pré-processamento:** A entrada do TFT consiste em três tipos principais de dados: variáveis estáticas (que não mudam ao longo do tempo), variáveis conhecidas (disponíveis no futuro) e variáveis observadas (históricas). Cada tipo de dado é pré-processado adequadamente para garantir que o modelo possa interpretá-lo corretamente.
+
+**Gating Mechanisms (Mecanismos de Portão)**: TFT utiliza mecanismos de gating, como o Gated Linear Unit (GLU), para controlar o fluxo de informações no modelo. Esses mecanismos ajudam a modelar interações complexas e não-lineares e a filtrar ruídos irrelevantes.
+
+**Variable Selection Networks**: As redes de seleção de variáveis são usadas para identificar e priorizar as variáveis mais importantes para a previsão. Isso ajuda o modelo a se concentrar nas informações mais relevantes, melhorando a precisão e a eficiência do modelo.
+
+**Processamento Temporal**: O coração do TFT é a sua capacidade de processar sequências temporais. Ele usa uma combinação de camadas convolucionais e mecanismos de atenção para capturar padrões temporais de longo e curto prazo. A atenção multi-cabeça permite que o modelo avalie a importância relativa de diferentes pontos no tempo.
+
+**Decoder e Saída**: Na fase final, o TFT utiliza as representações aprendidas das etapas anteriores para fazer previsões sobre futuros valores da série temporal. Isso geralmente envolve a previsão de vários passos à frente, utilizando tanto os dados históricos quanto as informações contextuais.
+
+**Regularização e Componentes Adicionais**: Para melhorar a generalização, o TFT pode incluir componentes de regularização como dropout. Além disso, técnicas de aprendizado profundo, como normalização em lote, também podem ser incorporadas para estabilizar e acelerar o treinamento.
+
+> O TFT é particularmente adequado para aplicações onde as séries temporais são influenciadas por uma variedade de fatores de entrada e onde a interpretabilidade do modelo é essencial. Ele tem sido aplicado com sucesso em previsões financeiras, previsão de demanda e outras áreas onde as previsões precisas de séries temporais são fundamentais.
