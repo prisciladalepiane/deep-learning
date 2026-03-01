@@ -654,3 +654,11 @@ Vantagens: Útil para seleção de modelos com uma penalização mais forte para
 Desvantagens: Requer a verossimilhança do modelo e o tamanho da amostra.
 
 Escolher a métrica de avaliação certa é essencial para entender o desempenho do modelo de séries temporais e garantir que ele esteja alinhado com os objetivos específicos da aplicação. É comum usar várias métricas em conjunto para obter uma visão mais completa do desempenho do modelo.
+
+LINKS
+
+Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting
+https://arxiv.org/abs/1912.09363
+
+Demand forecasting with the Temporal Fusion Transformer
+https://pytorch-forecasting.readthedocs.io/en/stable/tutorials/stallion.html
