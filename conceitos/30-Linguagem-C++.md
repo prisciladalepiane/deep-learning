@@ -39,14 +39,23 @@ int main() {
 
 }
 ```
+## Compilação
 
-Para compilar código C++ no Linux (Ubuntu) execute o comando abaixo no terminal 
+Para compilar código C++ no Linux (Ubuntu) execute os comandos abaixos no terminal 
 
 `sudo apt install build-essential`
 
-`g++ -o hello`
+`g++ -o hello.cpp`
 
 `\hello`
+
+ou 
+
+`g++ Programa.cpp -o programa`
+
+`./programa`
+
+
 
 ## Bibliografia complementar
 
