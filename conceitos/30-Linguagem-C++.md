@@ -238,6 +238,205 @@ int main()
 }
 ``` 
 
+### Arrays
+ 
+Um array é um tipo de dado agregado que nos permite acessar muitas variáveis do mesmo tipo por meio de um único identificador.
+
+Para declarar um array, usamos colchetes ([]) para dizer ao compilador que esta é uma variável de array (em vez de uma variável normal), 
+bem como quantas variáveis alocar (chamado de comprimento do array).
+
+Cada uma das variáveis em um array é chamada de elemento. Os elementos não têm seus próprios nomes exclusivos. Em vez disso, para 
+acessar elementos individuais de um array, usamos o nome do array, junto com o operador subscrito ([]) e um parâmetro chamado 
+subscrito (ou índice) que informa ao compilador qual elemento queremos. Esse processo é chamado de subscrito ou indexação do array.
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Cria um array de números inteiros
+    int lista[5]; 
+
+    // Atribui valores a cada elemento do array
+    lista[0] = 1; 
+    lista[1] = 2;
+    lista[2] = 3;
+    lista[3] = 4;
+    lista[4] = 5; 
+ 
+    cout << "\nEste é o primeiro elemento do array: " << lista[0] << '\n';
+    cout << "Aqui está a soma de todos os elementos do array: " << lista[0] + lista[1] + lista[2] + lista[3] + lista[4] << "\n\n";
+ 
+}
+```
+
+
+```c++
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Observe que estamos inicializando somente os 3 primeiros elementos do array
+    // Isso deve ser evitado
+    int lista_num1[5] = { 100, 200, 300 }; 
+ 
+    cout << "\n\nImprime Array 1:\n";
+    for (int i = 0; i <= 4; ++i)
+        cout << "Elemento do array no índice " << i << " é igual a " << lista_num1[i] << "\n";
+
+
+    // Não definimos o tamanho do array de forma explícita, mas sim através de atribuição dos valores dos elementos.
+    // É o que chamamos de alocação dinâmica
+    int lista_num2[] = { 1, 2, 3, 4, 5, 6, 7 }; 
+
+    cout << "\n\nImprime Array 2:\n";
+    for (int a = 0; a <= 6; ++a)
+        cout << "Elemento do array no índice " << a << " é igual a " << lista_num2[a] << "\n";
+
+    
+    // Arrays suportam qualquer tipo básico em C++
+    string lista_num3[6] = { "Azul", "Verde", "Rosa", "Branco", "Amarelo", "Marrom" }; 
+
+    cout << "\n\nImprime Array 3:\n";
+    for (int z = 0; z <= 5; ++z)
+        cout << "Elemento do array no índice " << z << " é igual a " << lista_num3[z] << "\n";
+
+}
+```
+
+### Structs
+
+Há muitas situações em programação em que precisamos de mais de uma variável para representar um objeto. 
+
+Por exemplo, para representar um funcionário, você pode armazenar nome, aniversário, altura, peso ou qualquer outra característica.
+
+Felizmente, C++ nos permite criar nossos próprios tipos de dados agregados definidos pelo usuário. 
+
+Um tipo de dado agregado é um tipo de dado que agrupa diversas variáveis individuais. 
+
+Um dos tipos de dados agregados mais simples é o struct. 
+
+Um struct (abreviação de estrutura) nos permite agrupar variáveis de tipos de dados mistos em uma única unidade.
+
+
+```c++
+
+#include <iostream>
+using namespace std;
+
+// Declara um struct
+struct Funcionario
+{
+    int id;
+    int idade;
+    double salario;
+};
+ 
+// Função
+void imprimeFunc(Funcionario func)
+{
+    cout << "ID:   " << func.id << '\n';
+    cout << "Idade:  " << func.idade << '\n';
+    cout << "Salário: " << func.salario << '\n';
+}
+ 
+int main()
+{
+    // Inicializa a variável chamada bob do tipo Funcionario
+    Funcionario bob = { 1001, 42, 3589.15 };
+
+    // Inicializa a variável chamada maria do tipo Funcionario
+    Funcionario maria = { 2003, 28, 4561.27 };
+ 
+    // Imprime Bob
+    cout << "\nDados do Bob:" << "\n";
+    imprimeFunc(bob);
+ 
+    // Imprime Maria
+    cout << "\nDados da Maria:" << "\n";
+    imprimeFunc(maria);
+ }
+
+```
+
+### Structs Aninhadas
+
+
+```c++
+
+#include <cstdint>
+#include <iostream>
+using namespace std;
+
+// Primeira struct
+struct Funcionario
+{
+    int16_t id;
+    int32_t idade;
+    double salario;
+};
+ 
+// Segunda struct
+struct Empresa
+{
+    Funcionario CEO; 
+    int numFun;
+};
+ 
+// Função
+void imprimeEmpresa(Empresa empresa)
+{
+    cout << "ID do CEO:   " << empresa.CEO.id << '\n';
+    cout << "Idade do CEO:  " << empresa.CEO.idade << '\n';
+    cout << "Salário do CEO: " << empresa.CEO.salario << '\n';
+    cout << "Número de Funcionários: " << empresa.numFun << '\n';
+}
+
+// Função
+void imprimeFunc(Funcionario func)
+{
+    cout << "ID:   " << func.id << '\n';
+    cout << "Idade:  " << func.idade << '\n';
+    cout << "Salário: " << func.salario << '\n';
+}
+ 
+int main()
+{
+    // Inicializa a variável chamada ABC do tipo Empresa
+    Empresa ABC;
+
+    // Atribui valores às variáveis
+    ABC.CEO.id = 1;
+    ABC.CEO.idade = 62;
+    ABC.CEO.salario = 75000.00;
+    ABC.numFun = 120;
+
+    // Imprime ABC
+    cout << "\nDados da Empresa ABC:" << "\n";
+    imprimeEmpresa(ABC);
+
+    // Inicializa a variável chamada ZXY do tipo Empresa
+    Empresa ZXY = {{ 10, 58, 85000.0 }, 140 };
+
+    // Imprime ZXY
+    cout << "\nDados da Empresa ZXY:" << "\n";
+    imprimeEmpresa(ZXY);
+
+    // Inicializa a variável chamada bob do tipo Funcionario
+    Funcionario bob = { 1001, 42, 3589.15 };
+
+    // Imprime Bob
+    cout << "\nDados do Bob:" << "\n";
+    imprimeFunc(bob);
+ 
+    
+ 
+ }
+ ```
+
 ## Bibliografia complementar
 
 C++ Coding style
