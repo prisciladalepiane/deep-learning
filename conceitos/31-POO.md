@@ -97,3 +97,40 @@ A sobrecarga de funções é a capacidade de uma linguagem de programação de d
 Embora Python não suporte a sobrecarga de funções no sentido tradicional (como em C++ ou Java), pode-se conseguir um efeito similar utilizando parâmetros padrão e verificação de tipos dentro da função.
 
 Funções e métodos são componentes fundamentais da POO, permitindo modularidade e reutilização de código. A sobrecarga de funções e métodos permite definir múltiplas variantes de uma função com o mesmo nome, adaptando o comportamento conforme os argumentos recebidos. 
+
+## Funções e Sobrecarga de Funções
+
+Em programação, uma função é um bloco de código reutilizável que executa uma tarefa específica. Em POO, as funções são frequentemente chamadas de métodos quando definidas dentro de uma classe.
+
+### Sobrecarga de Funções
+
+A sobrecarga de funções é a capacidade de uma linguagem de programação de definir múltiplas funções com o mesmo nome, mas diferentes assinaturas (parâmetros diferentes). Isso permite que uma função se comporte de diferentes maneiras dependendo dos argumentos passados.
+
+Embora Python não suporte a sobrecarga de funções no sentido tradicional (como em C++ ou Java), pode-se conseguir um efeito similar utilizando parâmetros padrão e verificação de tipos dentro da função.
+
+> Funções e métodos são componentes fundamentais da POO, permitindo modularidade e reutilização de código. A sobrecarga de funções e métodos permite definir múltiplas variantes de uma função com o mesmo nome, adaptando o comportamento conforme os argumentos recebidos. 
+
+## Herança, Polimorfismo e Encapsulamento
+
+### Herança
+A herança é um conceito na Programação Orientada a Objetos (POO) que permite criar uma nova classe baseada em uma classe existente. A nova classe, chamada de classe derivada ou subclasse, herda os atributos e métodos da classe base ou superclasse. Isso promove a reutilização de código e a criação de hierarquias de classes.
+
+### Polimorfismo
+Polimorfismo é a capacidade de diferentes classes serem tratadas através da mesma interface. Isso significa que o mesmo método pode ter diferentes comportamentos dependendo do objeto que o invoca.
+
+Tipos de Polimorfismo:
+
+**Sobrecarga de Métodos (Overloading)**: Múltiplos métodos com o mesmo nome mas diferentes assinaturas na mesma classe (não diretamente suportado em Python).
+
+**Sobrescrita de Métodos (Overriding)**: Uma subclasse fornece uma implementação específica de um método já definido na sua superclasse.
+
+### Encapsulamento
+Encapsulamento é o princípio de ocultar os detalhes internos de um objeto e expor apenas o que é necessário. Isso é feito utilizando modificadores de acesso para restringir o acesso a atributos e métodos. 
+
+### Resumo
+
+**Herança** permite a criação de novas classes baseadas em classes existentes, promovendo a reutilização de código.
+
+**Polimorfismo** permite que diferentes classes sejam tratadas através da mesma interface, permitindo o uso de métodos comuns de forma flexível.
+
+**Encapsulamento** protege os dados internos de uma classe, expondo apenas o necessário e aumentando a segurança e integridade do código.
