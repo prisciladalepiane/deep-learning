@@ -134,3 +134,54 @@ Encapsulamento é o princípio de ocultar os detalhes internos de um objeto e ex
 **Polimorfismo** permite que diferentes classes sejam tratadas através da mesma interface, permitindo o uso de métodos comuns de forma flexível.
 
 **Encapsulamento** protege os dados internos de uma classe, expondo apenas o necessário e aumentando a segurança e integridade do código.
+
+## Recursividade
+
+Recursividade é uma técnica de programação onde uma função chama a si mesma diretamente ou indiretamente. Uma função recursiva soluciona um problema dividindo-o em subproblemas menores do mesmo tipo e a solução desses subproblemas é usada para resolver o problema original.
+
+### Características da Recursividade
+1. **Caso Base**: Uma condição de parada que termina a recursão. Sem um caso base, a recursão continuaria indefinidamente, resultando em um erro de estouro de pilha (stack overflow).
+
+2. **Chamada Recursiva**: A função se chama com um conjunto de parâmetros mais simples ou menores que os parâmetros originais. Cada chamada recursiva deve progredir em direção ao caso base.
+
+Exemplos Comuns de Recursividade
+
+1. Fatorial de um Número:
+
+O fatorial de um número n (denotado como n!) é o produto de todos os números inteiros positivos menores ou iguais a n.
+
+Recursivamente, isso pode ser definido como:
+
+```cpp
+Caso Base: 0! = 1
+Passo Recursivo: n! = n * (n-1)!
+```
+
+
+2. Sequência de Fibonacci:
+
+A sequência de Fibonacci é uma série de números onde cada número é a soma dos dois precedentes.
+
+Recursivamente, isso pode ser definido como:
+
+Caso Base: fib(0) = 0, fib(1) = 1
+Passo Recursivo: fib(n) = fib(n-1) + fib(n-2)
+
+### Vantagens da Recursividade
+
+1. Simplicidade: Alguns problemas são naturalmente recursivos e podem ser mais fáceis de resolver usando recursão, proporcionando uma solução mais clara e elegante.
+
+2. Divisão de Problemas: A recursão facilita a divisão de problemas complexos em partes menores e mais gerenciáveis.
+
+### Desvantagens da Recursividade
+1. Desempenho: Chamar uma função recursivamente pode ser menos eficiente do que usar uma solução iterativa, devido ao overhead de chamadas de função repetidas e ao uso da pilha de chamadas.
+
+2. Limites de Recursão: A profundidade da recursão é limitada pela capacidade da pilha de chamadas do sistema. Problemas que exigem um grande número de chamadas recursivas podem causar um estouro de pilha.
+
+### Uso da Recursividade
+
+A recursividade é amplamente usada em algoritmos de ordenação e busca, processamento de estruturas de dados hierárquicas (como árvores e grafos), e em muitos problemas clássicos de programação, como o cálculo de fatorial, Fibonacci e a resolução de quebra-cabeças (por exemplo, Torres de Hanói).
+
+Recursividade é uma técnica poderosa e elegante para resolver problemas que podem ser decompostos em subproblemas menores de forma semelhante.
+
+Embora possa não seja sempre a abordagem mais eficiente em termos de desempenho, sua simplicidade e clareza a tornam uma ferramenta valiosa no arsenal de um programador.
