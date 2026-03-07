@@ -185,3 +185,22 @@ A recursividade é amplamente usada em algoritmos de ordenação e busca, proces
 Recursividade é uma técnica poderosa e elegante para resolver problemas que podem ser decompostos em subproblemas menores de forma semelhante.
 
 Embora possa não seja sempre a abordagem mais eficiente em termos de desempenho, sua simplicidade e clareza a tornam uma ferramenta valiosa no arsenal de um programador.
+
+
+## Public Private
+
+Em C++, private e public são especificadores de acesso utilizados para definir a acessibilidade dos membros (atributos e métodos) de uma classe. Eles controlam o nível de visibilidade e acesso que outras partes do código têm a esses membros.
+
+### Public (Público)
+
+Os membros declarados como public são acessíveis de qualquer lugar onde o objeto da classe seja visível. Isso significa que você pode acessar esses membros diretamente de fora da classe. Eles são úteis para definir a interface pública da classe, ou seja, as funcionalidades que devem estar disponíveis para os usuários da classe.
+
+### Private (Privado)
+
+Os membros declarados como private só são acessíveis dentro da própria classe. Eles não podem ser acessados diretamente de fora da classe. Isso é útil para encapsular a implementação interna da classe e proteger os dados de acesso não autorizado ou modificações indevidas.
+
+Usar private é uma prática comum para proteger a integridade dos dados internos de uma classe. Em vez de permitir acesso direto aos atributos, você fornece métodos públicos (getter e setter) para acessar e modificar os atributos. Isso permite que você adicione validação ou lógica adicional quando os dados são acessados ou modificados.
+
+### Protegido (Protected)
+
+Além de public e private, C++ também possui o especificador de acesso protected. Os membros protected são acessíveis dentro da própria classe e também nas classes derivadas (heranças), mas não são acessíveis fora dessas classes.
