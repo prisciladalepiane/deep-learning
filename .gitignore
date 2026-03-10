@@ -2,3 +2,5 @@
 *.keras
 *.csv
 01-Classificacao-Sentimento/*.txt
+*.png
+*.jpeg
