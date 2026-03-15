@@ -519,8 +519,8 @@ int &ref = x;  // ref é uma referência para x
 
 1. Sintaxe:
 
-**Ponteiros** usam o operador * para desreferenciar e & para obter o endereço.\
-**Referências** usam o operador & para declaração, mas não precisam de operadores especiais para acessar o valor.
+**Ponteiros** usam o operador ( * ) para desreferenciar e ( & ) para obter o endereço.\
+**Referências** usam o operador ( & ) para declaração, mas não precisam de operadores especiais para acessar o valor.
 
 2. Inicialização:
 
@@ -529,7 +529,7 @@ int &ref = x;  // ref é uma referência para x
 
 3. Nulidade:
 
-**Ponteiros** podem ser nulos (podem apontar para "nada"), usando o valor nullptr.
+**Ponteiros** podem ser nulos (podem apontar para "nada"), usando o valor nullptr.\
 **Referências** não podem ser nulas; devem sempre referenciar uma variável válida.
 
 4. Aritmética de Ponteiros:
