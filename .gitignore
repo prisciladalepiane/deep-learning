@@ -4,3 +4,6 @@
 01-Classificacao-Sentimento/*.txt
 *.png
 *.jpeg
+libtorch/
+CMakeFiles/
+Makefile
