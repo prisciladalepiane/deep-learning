@@ -594,6 +594,54 @@ Exemplos:
 
 > Templates e STL juntos permitem que os programadores escrevam código genérico, reutilizável e eficiente, reduzindo o esforço de desenvolvimento e a probabilidade de erros.
 
+## Processo de Compilação C++ com PyTorch 
+
+### CMake
+
+CMake é uma ferramenta de automação de compilação que é amplamente usada para gerenciar o processo de construção (build) de software, especialmente em projetos escritos em C, C++ e outras linguagens. Ele serve para gerar arquivos de configuração para sistemas de compilação, como Makefiles para Unix, Visual Studio Solutions para Windows, entre outros. 
+
+Abaixo estão os principais propósitos e funcionalidades do CMake.
+
+#### Gerenciamento de Build Multi-Plataforma:
+
+CMake é projetado para ser multiplataforma e permite que o mesmo projeto de código-fonte seja compilado em diferentes sistemas operacionais, como Windows, macOS e Linux. Ele gera automaticamente arquivos de construção específicos para cada plataforma, como Makefiles para Linux ou arquivos de configuração para o Visual Studio no Windows.
+
+#### Configuração Simplificada do Projeto:
+
+Em vez de escrever Makefiles manualmente, o CMake usa arquivos de configuração (CMakeLists.txt) para definir como o software deve ser compilado. Esses arquivos especificam os diretórios de origem, bibliotecas a serem linkadas, dependências, entre outros detalhes.
+
+#### Gestão de Dependências:
+
+CMake facilita a inclusão de bibliotecas externas e dependências no projeto. Ele pode localizar automaticamente bibliotecas instaladas no sistema e configurar os paths necessários para que sejam incluídas corretamente no processo de compilação.
+
+#### Compatibilidade com Várias Ferramentas de Build:
+
+Ele suporta diversas ferramentas de build além do make, como ninja, Xcode e Visual Studio, permitindo flexibilidade na escolha da ferramenta de build preferida.
+
+#### Suporte a Compilação Incremental:
+
+CMake gera arquivos de build que suportam a compilação incremental, recompilando apenas os arquivos que foram alterados desde a última build, o que acelera o processo de desenvolvimento.
+
+#### Configuração Personalizável:
+
+O CMake permite adicionar configurações personalizadas ao processo de compilação, como definições de pré-processador, configurações de otimização e outras opções de compilador, adaptando o build às necessidades específicas do projeto.
+
+#### Como Funciona o CMake
+
+Escrever o CMakeLists.txt:
+
+Você escreve um ou mais arquivos CMakeLists.txt, que descrevem como o seu projeto deve ser construído. Esses arquivos incluem as definições de fontes, cabeçalhos, bibliotecas e outras instruções de configuração.
+
+#### Rodar o CMake:
+
+Executa-se o comando cmake para processar o CMakeLists.txt e gerar os arquivos de build apropriados para o seu sistema.
+
+#### Construir o Projeto:
+
+Usa-se a ferramenta de build gerada pelo CMake (como make ou ninja) para compilar o projeto.
+
+CMake simplifica e automatiza o processo de configuração e construção de projetos de software complexos, especialmente quando há a necessidade de compilar o código em múltiplas plataformas e com diferentes configurações de build. Ele é uma ferramenta essencial para desenvolvedores que trabalham em ambientes de desenvolvimento multiplataforma e que buscam eficiência no gerenciamento de dependências e configurações de compilação.
+
 ## Bibliografia complementar
 
 C++ Coding style
