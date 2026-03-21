@@ -7,3 +7,4 @@
 libtorch/
 CMakeFiles/
 Makefile
+*.cmake
