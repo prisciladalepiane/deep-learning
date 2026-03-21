@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------------------------
+
+# Para executar o script Python com PyTorch
+
+1- Abra o terminal ou prompt e execute:
+
+pip install torch
+
+2- Execute o script:
+
+python ModeloPy.py
+
+-------------------------------------------------------------------------------------------
+
+# Para executar o script C++ com PyTorch
+
+1- Faça download do libtorch (pytorch.org) e descompacte o arquivo na mesma pasta onde está o script cpp.
+
+2- Instale o CMake.
+
+3- Execute os comandos abaixo na pasta onde está o script e a pasta libtorch:
+
+cmake -DCMAKE_PREFIX_PATH=libtorch
+cmake --build . --config Release
+
+4- Execute o programa:
+
+./ModeloPy
+
