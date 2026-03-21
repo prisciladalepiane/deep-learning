@@ -8,3 +8,4 @@ libtorch/
 CMakeFiles/
 Makefile
 *.cmake
+CMakeCache.txt
