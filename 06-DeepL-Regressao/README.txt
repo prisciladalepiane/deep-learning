@@ -25,5 +25,5 @@ cmake --build . --config Release
 
 4- Execute o programa:
 
-./ModeloPy
+./ModeloCpp
 
