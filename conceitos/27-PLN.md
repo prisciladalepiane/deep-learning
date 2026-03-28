@@ -398,3 +398,61 @@ Os LLMs têm várias aplicações, incluindo:
 **Sentiment Analysis**: os LLMs podem ser usados para analisar o tom e a opinião do texto.
 
 Os LLMs são treinados usando técnicas de aprendizado de máquina, como backpropagation e gradient descent, para ajustar os parâmetros dos modelos para melhorar a performance.
+
+## Arquitetura de um LLM
+
+Principais Características da Arquitetura
+
+### 1. Camada de Embeddings
+
+A primeira parte de um LLM é uma camada de embeddings, que transforma palavras (ou tokens) de uma sequência de texto em vetores numéricos de alta dimensão. Cada palavra, caractere ou subpalavra é mapeada para um vetor que captura características semânticas e sintáticas. Esses vetores são passados para a camada de entrada do Transformer.
+
+### 2. Positional Encoding
+
+Os Transformers não têm uma estrutura sequencial explícita, como RNNs ou LSTMs. Portanto, para capturar a ordem das palavras na sequência, um componente de Positional Encoding é adicionado aos embeddings. Essa etapa usa funções trigonométricas (seno e cosseno) para adicionar informações posicionais aos vetores de entrada, permitindo que o modelo distinga a posição relativa das palavras na sequência.
+
+### 3. Camadas de Atenção Multi-cabeça (Multi-Head Attention)
+
+Um dos pilares do Transformer é o Mecanismo de Atenção, que permite ao modelo "focar" em diferentes partes da sequência de entrada ao mesmo tempo, independentemente da distância entre os tokens. Na prática, a atenção atribui pesos a diferentes palavras na sequência, permitindo que o modelo compreenda as relações contextuais.
+
+O Multi-Head Attention é uma generalização do mecanismo de atenção. Em vez de calcular uma única função de atenção, ele executa várias atenções paralelas (múltiplas "cabeças"). Cada cabeça de atenção tem sua própria representação da relação entre os tokens, o que ajuda o modelo a capturar diferentes aspectos do contexto.
+
+A atenção é calculada com a fórmula:
+
+$$
+Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) * V
+$$
+
+Onde Q (queries), K (keys) e V (values) são projeções lineares dos embeddings, e d_k é a dimensão das projeções.
+
+### 4. Feed-Forward Networks
+
+Após o mecanismo de atenção, os dados passam por redes feed-forward independentes em cada posição do token. Essas redes consistem em camadas totalmente conectadas (dense layers) que operam sobre os vetores de atenção. Em geral, essas redes têm uma estrutura simples: elas aplicam uma transformação linear seguida por uma função de ativação não linear (geralmente ReLU).
+
+### 5. Normalização e Resíduos (Residual Connections)
+
+Cada bloco no Transformer utiliza conexões residuais, o que significa que a saída de cada subcomponente (como a atenção multi-cabeça ou a rede feed-forward) é somada à sua entrada original. Isso ajuda a evitar a degradação do gradiente durante o treinamento em redes muito profundas. Em seguida, uma camada de normalização (Layer Normalization) é aplicada para estabilizar o treinamento.
+
+### 6. Empilhamento de Blocos (Stacking of Transformer Blocks)
+
+Os Transformers são compostos por uma série de blocos idênticos empilhados, onde cada bloco contém camadas de atenção multi-cabeça e redes feed-forward. No modelo original de Transformer para tradução, por exemplo, havia 6 camadas empilhadas, tanto no codificador quanto no decodificador, mas LLMs podem ter muito mais (como o GPT-3 com 96 camadas).
+
+### 7. Arquitetura de Codificador-Decodificador vs. Decodificador Único
+
+Codificador-Decodificador: Esse é o design usado pelo Transformer original, onde o codificador processa a sequência de entrada e o decodificador gera a sequência de saída (usado em tarefas como tradução).
+
+Decodificador Único: Em modelos como GPT (Generative Pre-trained Transformer), apenas o decodificador é usado para prever o próximo token baseado no histórico. Esses modelos são especializados em tarefas de geração de linguagem.
+
+### 8. Cabeça de Classificação (ou Projeção Linear para Saída)
+
+No final da arquitetura do LLM, há uma camada linear que mapeia os vetores processados de volta para o espaço de tokens. Em um modelo de linguagem, essa camada transforma o vetor final em uma distribuição de probabilidade sobre o vocabulário, usando uma função softmax, permitindo prever a próxima palavra ou realizar outras tarefas específicas, como classificação ou resposta a perguntas.
+
+Resumo do Fluxo
+
+- Entrada: Texto dividido em tokens -> embeddings + posicionamento.
+- Mecanismo de Atenção: Atenção multi-cabeça sobre a sequência de tokens.
+- Feed-forward: Aplicação de redes densas e não lineares em cada token.
+- Empilhamento: Repetição desses blocos várias vezes.
+- Saída: A distribuição de probabilidade para prever o próximo token ou realizar outra tarefa.
+
+Essa arquitetura escalável e paralelizada faz dos Transformers uma solução extremamente eficiente e poderosa para lidar com tarefas complexas de PLN, tornando-os a base dos LLMs.
