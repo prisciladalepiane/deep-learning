@@ -286,7 +286,11 @@ class Layer {
 // Especificação pública da classe    
 public:
 
+    // O destrutor é uma função especial que é chamada quando um objeto é destruído (por exemplo, quando ele sai do escopo ou é deletado). 
     virtual ~Layer() = default; // Destrutor virtual
+    // As funções virtuais puras, como as listadas acima, são funções que não têm uma implementação na classe base e devem ser implementadas 
+    // pelas classes derivadas. A sintaxe para definir uma função virtual pura em C++ é usar = 0 no final da declaração da função. Isso faz com que 
+    // a classe se torne uma classe abstrata, ou seja, você não pode instanciá-la diretamente.
     virtual Tensor operator()(const Tensor& in) = 0;  // Função virtual pura para forward pass
     virtual Tensor backward(const Tensor& delta) = 0; // Função virtual pura para backward pass
     virtual void print(std::ostream& os) const = 0;   // Função virtual pura para impressão
@@ -307,12 +311,6 @@ public:
     Tensor prev_bias_grad;   // Gradiente anterior dos bias
 };
 
-// O destrutor é uma função especial que é chamada quando um objeto é destruído (por exemplo, quando ele sai do escopo ou é deletado). 
-
-// As funções virtuais puras, como as listadas acima, são funções que não têm uma implementação na classe base e devem ser implementadas 
-// pelas classes derivadas. A sintaxe para definir uma função virtual pura em C++ é usar = 0 no final da declaração da função. Isso faz com que 
-// a classe se torne uma classe abstrata, ou seja, você não pode instanciá-la diretamente.
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Classe Conv2D que herda de Layer, representando uma camada de convolução 2D
@@ -322,8 +320,10 @@ public:
 
     // Construtor que inicializa os pesos e biases da camada Conv2D
     Conv2D(int in_channels, int out_channels, int ksize, int stride=1, int padding=0) {
-        stride_ = stride;    // Inicializa o valor do stride
-        padding_ = padding;  // Inicializa o valor do padding
+
+        // Inicializa os parâmetros da camada
+        stride_ = stride;    // stride: de quanto em quanto o filtro anda
+        padding_ = padding;  // padding: quantidade de pixels adicionados ao redor da entrada
 
         // Inicializa os pesos como um tensor de 4 dimensões: [out_channels, in_channels, ksize, ksize]
         weight = Tensor(out_channels, in_channels, ksize, ksize);
