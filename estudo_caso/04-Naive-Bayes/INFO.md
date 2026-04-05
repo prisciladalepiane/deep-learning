@@ -81,3 +81,13 @@ A parte 4 do código permite imprimir os elementos de um vetor bidimensional de 
 Primeiramente, o código acessa cada linha do vetor bidimensional e, em seguida, percorre os elementos de cada linha, imprimindo-os com espaços entre eles. Após completar a impressão de uma linha, ele insere uma quebra de linha para que a próxima linha do vetor comece em uma nova linha no console.
 
 Assim, este método facilita a visualização de dados armazenados em um vetor bidimensional, apresentando-os de uma maneira organizada e clara, similar à forma como os dados seriam visualizados em uma tabela ou matriz.
+
+## PARTE 5 - Função para calcular as probabilidades
+
+Esta parte do código calcula as probabilidades a priori para um conjunto de dados de treinamento. Ele utiliza uma matriz para armazenar as contagens de ocorrências de duas possíveis classes (representadas por 0 e 1) dentro do vetor fornecido.
+
+Primeiro, o código percorre o vetor de dados de entrada e incrementa as contagens para cada classe. Em seguida, essas contagens são normalizadas pela divisão pelo tamanho total do vetor, resultando nas probabilidades a priori de cada classe.
+
+Essas probabilidades a priori são então armazenadas e retornadas em uma matriz, que pode ser utilizada posteriormente em algoritmos de classificação, como o classificador de Naive Bayes, para calcular as probabilidades de classes baseadas nos dados de treinamento.
+
+Probabilidades a priori são estimativas iniciais da probabilidade de um evento antes de qualquer evidência nova ser considerada. Elas são baseadas em informações ou conhecimentos pré-existentes, sem levar em conta dados específicos da situação atual. Em termos estatísticos, é a crença inicial sobre a distribuição de probabilidade de um evento, que pode ser atualizada posteriormente com a introdução de novas evidências, utilizando o Teorema de Bay

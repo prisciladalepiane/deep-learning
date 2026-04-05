@@ -357,3 +357,26 @@ void print2DVector(vector<vector<double> > vect) {
 		cout << endl;
 	}
 }
+
+/* -------------------- PARTE 5 -------------------- */
+
+// Calcula as probabilidade apriori nos dados de treino
+vector<vector<double> > priorProb(vector<double> vect) {
+
+	// Matriz 1x2
+	vector<vector<double> > prior(1, vector<double> (2, 0)); 
+	
+	for(int i = 0; i < vect.size(); i++) {
+		if(vect.at(i) == 0) {
+			prior.at(0).at(0)++;
+		}
+		else {
+			prior.at(0).at(1)++;
+		}
+	}
+
+	prior.at(0).at(0) = prior.at(0).at(0) / vect.size();
+	prior.at(0).at(1) = prior.at(0).at(1) / vect.size();
+		
+	return prior;
+}
