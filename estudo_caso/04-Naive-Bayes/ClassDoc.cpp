@@ -380,3 +380,23 @@ vector<vector<double> > priorProb(vector<double> vect) {
 		
 	return prior;
 }
+
+/* -------------------- PARTE 6 -------------------- */
+
+// Calcula a contagem de classe (será usada para calcular as probabilidades das variáveis de entrada)
+vector<vector<double> > countclasse(vector<double> vect) {
+
+	// Matriz 1x2
+	vector<vector<double> > prior(1, vector<double> (2, 0)); 
+	
+	for(int i = 0; i < vect.size(); i++) {
+		if(vect.at(i) == 0) {
+			prior.at(0).at(0)++;
+		}
+		else {
+			prior.at(0).at(1)++;
+		}
+	}
+	return prior;
+}
+

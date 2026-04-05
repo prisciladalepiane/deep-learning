@@ -90,4 +90,12 @@ Primeiro, o código percorre o vetor de dados de entrada e incrementa as contage
 
 Essas probabilidades a priori são então armazenadas e retornadas em uma matriz, que pode ser utilizada posteriormente em algoritmos de classificação, como o classificador de Naive Bayes, para calcular as probabilidades de classes baseadas nos dados de treinamento.
 
-Probabilidades a priori são estimativas iniciais da probabilidade de um evento antes de qualquer evidência nova ser considerada. Elas são baseadas em informações ou conhecimentos pré-existentes, sem levar em conta dados específicos da situação atual. Em termos estatísticos, é a crença inicial sobre a distribuição de probabilidade de um evento, que pode ser atualizada posteriormente com a introdução de novas evidências, utilizando o Teorema de Bay
+Probabilidades a priori são estimativas iniciais da probabilidade de um evento antes de qualquer evidência nova ser considerada. Elas são baseadas em informações ou conhecimentos pré-existentes, sem levar em conta dados específicos da situação atual. Em termos estatísticos, é a crença inicial sobre a distribuição de probabilidade de um evento, que pode ser atualizada posteriormente com a introdução de novas evidências, utilizando o Teorema de Bayes.
+
+## PARTE 6 - Função Para Contagem de Classe
+
+A parte 6 do código tem como objetivo calcular a contagem de ocorrências de cada classe em um vetor de dados, que será usada posteriormente para calcular as probabilidades das variáveis de entrada. Ele armazena essas contagens em uma matriz.
+
+Observe que primeiramente, ele inicializa uma matriz para armazenar as contagens de duas classes distintas (representadas por 0 e 1). Em seguida, percorre o vetor de entrada e incrementa a contagem correspondente na matriz para cada ocorrência de 0 ou 1 encontrada.
+
+E finalmente, a matriz com as contagens de cada classe é retornada, proporcionando uma base para cálculos posteriores de probabilidades condicionais em algoritmos de classificação, como o Naive Bayes.
