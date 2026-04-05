@@ -61,3 +61,15 @@ Declara métodos para o cálculo de métricas de avaliação do modelo:
 - `accuracy` calcula a acurácia do modelo comparando duas matrizes de double.
 
 Define ainda uma constante `numOfIterations` com valor 5, que especifica o número de previsões que serão mostradas.
+
+## PARTE 3 - Processamento de Dados e Aplicação do Modelo
+
+Essa parte do código tem como objetivo principal processar um dataset de documentos e aplicar um modelo de classificação baseado no Teorema de Bayes.
+
+1. Lê um arquivo CSV contendo dados dos documentos, extrai e limpa as informações necessárias, como IDs, tipos de documentos, classes, validade de certificados e dias de uso, e armazena esses dados em vetores apropriados.
+
+2. Após o processamento e limpeza dos dados, o código utiliza funções auxiliares para calcular as probabilidades a priori e condicionais, bem como outras métricas estatísticas.
+
+3. Em seguida, implementa o Teorema de Bayes para prever a probabilidade de cada documento pertencer a uma classe específica, com base nas características extraídas.
+
+4. Avalia a performance do modelo gerando métricas de avaliação, como matriz de confusão, acurácia, sensibilidade e especificidade. Ele também exibe um conjunto de previsões para ilustrar os resultados do modelo, medindo o tempo total de execução para garantir a eficiência do processo. 
