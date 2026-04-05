@@ -73,3 +73,11 @@ Essa parte do código tem como objetivo principal processar um dataset de docume
 3. Em seguida, implementa o Teorema de Bayes para prever a probabilidade de cada documento pertencer a uma classe específica, com base nas características extraídas.
 
 4. Avalia a performance do modelo gerando métricas de avaliação, como matriz de confusão, acurácia, sensibilidade e especificidade. Ele também exibe um conjunto de previsões para ilustrar os resultados do modelo, medindo o tempo total de execução para garantir a eficiência do processo. 
+
+## PARTE 4 - Método Para Imprimir Vetor 2D em C++
+
+A parte 4 do código permite imprimir os elementos de um vetor bidimensional de números do tipo double. Ele percorre cada elemento do vetor e o exibe no console, organizando os valores em formato de matriz para facilitar a visualização.
+
+Primeiramente, o código acessa cada linha do vetor bidimensional e, em seguida, percorre os elementos de cada linha, imprimindo-os com espaços entre eles. Após completar a impressão de uma linha, ele insere uma quebra de linha para que a próxima linha do vetor comece em uma nova linha no console.
+
+Assim, este método facilita a visualização de dados armazenados em um vetor bidimensional, apresentando-os de uma maneira organizada e clara, similar à forma como os dados seriam visualizados em uma tabela ou matriz.

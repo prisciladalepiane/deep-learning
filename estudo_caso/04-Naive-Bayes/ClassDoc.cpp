@@ -346,3 +346,14 @@ int main() {
 
 } // Final da Função Main
 
+/* -------------------- PARTE 4 -------------------- */
+
+// Método para imprimir o vetor
+void print2DVector(vector<vector<double> > vect) {
+	for(int i = 0; i < vect.size(); i++) {
+		for(int j = 0; j < vect[i].size(); j++) {
+			cout << vect[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
