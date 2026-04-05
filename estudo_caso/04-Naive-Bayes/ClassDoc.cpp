@@ -616,3 +616,43 @@ vector<vector<double> > calc_raw_prob(double tipo_doc, double certificado_valido
 	return raw;
 }
 
+/* -------------------- PARTE 14 -------------------- */
+
+// Retorna: TP, FP, FN, TN 
+vector<vector<double> > confusionMatrix(vector<double> matA, vector<double> matB) {
+
+	// Matriz 2x2
+	vector<vector<double> > table(2, vector<double>(2, 0));  
+	
+	// matA = predicted
+	// matB = test$classe
+	
+	/*		TP FP
+	 * 		FN TN		*/ 
+	
+	for(int i = 0; i < matA.size(); i++) {
+
+			// true negative
+			if( matA.at(i) == 0 && matB.at(i) == 0 ) {			
+				table.at(0).at(0)++;
+			}
+
+			// true positive
+			else if( matA.at(i) == 1 && matB.at(i) == 1 ) {		
+				table.at(1).at(1)++;
+			}
+
+			// false positive
+			else if( matA.at(i) == 1 && matB.at(i) == 0 ) {	
+				table.at(1).at(0)++;
+			}
+
+			// false negative
+			else if( matA.at(i) == 0 && matB.at(i) == 1 ) {		
+				table.at(0).at(1)++;
+			}
+			else {}
+		}	
+	return table;
+}
+

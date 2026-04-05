@@ -157,3 +157,12 @@ Na parte 13 o código implementa o Teorema de Bayes para calcular as probabilida
 Primeiramente, são calculadas as probabilidades numeradoras para cada classe, combinando as verossimilhanças de tipo_doc e certificado_valido, a probabilidade a priori da classe e a verossimilhança de uso_dias. Isso resulta em dois valores, cada um representando a probabilidade conjunta das variáveis observadas para uma classe específica.
 
 Em seguida, é calculado o denominador que normaliza essas probabilidades. O denominador é a soma das probabilidades numeradoras de ambas as classes, garantindo que a soma das probabilidades resultantes seja igual a 1. Por fim, as probabilidades normalizadas para cada classe são armazenadas e retornadas, representando as probabilidades condicionais das classes dadas as variáveis observadas....
+
+## PARTE 14 - Função para criar a Matriz de confusão
+
+Nessa parte o código constrói uma matriz de confusão para avaliar a performance de um modelo de classificação, comparando os resultados previstos com os resultados reais. A matriz de confusão é uma tabela 2x2 que armazena os valores de verdadeiros positivos (TP), falsos positivos (FP), falsos negativos (FN) e verdadeiros negativos (TN).
+
+Observe que primeiro, ele inicializa uma matriz 2x2 para armazenar esses valores. Em seguida, percorre os vetores de previsões e resultados reais, incrementando as contagens apropriadas na matriz de confusão conforme as combinações de previsões e valores reais que encontra.
+
+O resultado é uma matriz que resume a performance do modelo de classificação, fornecendo informações sobre quantas previsões foram corretas (tanto positivas quanto negativas) e quantas foram incorretas (tanto falsos positivos quanto falsos negativos). Isso permite uma análise detalhada da precisão e dos erros do modelo.
+
