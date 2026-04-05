@@ -525,3 +525,38 @@ vector<vector<double> > uso_diasMean (vector<double> classe, vector<double> uso_
 	return mean;
 }
 
+/* -------------------- PARTE 10 -------------------- */
+
+// Calcula a variância da variável uso_dias nos dados de treino
+vector<vector<double> > uso_diasVar (vector<double> classe, vector<double> uso_dias, vector<vector<double> > count_classe) {
+
+	// Matriz 1x2
+	vector<vector<double> > var(1, vector<double> (2, 0)); 
+
+	// Matriz 1x2
+	vector<vector<double> > mean = uso_diasMean(classe, uso_dias, count_classe); 
+			
+	for(int i = 0; i < classe.size(); i++) {
+		if(classe.at(i) == 0) {
+			var.at(0).at(0) += pow( ( uso_dias.at(i) - mean.at(0).at(0) ), 2);
+		}
+		else if(classe.at(i) == 1) {
+			var.at(0).at(1) += pow( ( uso_dias.at(i) - mean.at(0).at(1) ), 2);
+		}
+		else{}
+	}
+		
+	for(int i = 0; i < var.size(); i++) {
+		for(int j = 0; j < var[i].size(); j++) {
+			if(j == 0) {
+				var.at(i).at(j) = var.at(i).at(j) / ( count_classe.at(0).at(0) - 1 ) ;
+			}
+			else if (j == 1) {
+				var.at(i).at(j) = var.at(i).at(j) / ( count_classe.at(0).at(1) - 1 ) ;
+			}
+			else {}
+		}
+	}	
+	return var;
+}
+
