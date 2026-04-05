@@ -99,3 +99,12 @@ A parte 6 do código tem como objetivo calcular a contagem de ocorrências de ca
 Observe que primeiramente, ele inicializa uma matriz para armazenar as contagens de duas classes distintas (representadas por 0 e 1). Em seguida, percorre o vetor de entrada e incrementa a contagem correspondente na matriz para cada ocorrência de 0 ou 1 encontrada.
 
 E finalmente, a matriz com as contagens de cada classe é retornada, proporcionando uma base para cálculos posteriores de probabilidades condicionais em algoritmos de classificação, como o Naive Bayes.
+
+## PARTE 7 - Função Para Calcular a Probabilidade Condicional 1
+
+Esse código tem por objetivo calcular a probabilidade condicional da variável tipo_doc para diferentes classes nos dados de treinamento. Ele armazena essas probabilidades em uma matriz, permitindo a análise de como a variável tipo_doc se distribui entre as classes.
+
+Veja que no início, o código percorre os vetores de classes e tipos de documentos, incrementando contadores específicos em uma matriz para cada combinação de classe e tipo de documento. Isso resulta em uma contagem bruta de ocorrências para cada tipo de documento dentro de cada classe.
+
+Em seguida, essas contagens são normalizadas pela divisão pelo número total de ocorrências de cada classe, resultando em probabilidades condicionais. A matriz final, que contém essas probabilidades, é então retornada e pode ser usada para cálculos posteriores em algoritmos de classificação, como o Naive .
+

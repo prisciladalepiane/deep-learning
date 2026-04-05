@@ -400,3 +400,53 @@ vector<vector<double> > countclasse(vector<double> vect) {
 	return prior;
 }
 
+/* -------------------- PARTE 7 -------------------- */
+
+// Calcula a probabilidade da variável tipo_doc nos dados de treino
+vector<vector<double> > likelihoodtipo_doc (vector<double> classe, vector<double> tipo_doc, vector<vector<double> > count_classe) {
+	
+	// Variável 2x3
+	vector<vector<double> > lh_tipo_doc (2, vector<double>(3,0)); 				
+	
+	for(int i = 0; i < classe.size(); i++) {
+		if(classe.at(i) == 0) {
+			if(tipo_doc.at(i) == 1) {
+				lh_tipo_doc.at(0).at(0)++;
+			}
+			else if(tipo_doc.at(i) == 2) {
+				lh_tipo_doc.at(0).at(1)++;
+			}
+			else if (tipo_doc.at(i) == 3) {
+				lh_tipo_doc.at(0).at(2)++;
+			}
+			else {}
+		}
+		else if(classe.at(i) == 1) {
+			if(tipo_doc.at(i) == 1) {
+				lh_tipo_doc.at(1).at(0)++;
+			}
+			else if(tipo_doc.at(i) == 2) {
+				lh_tipo_doc.at(1).at(1)++;
+			}
+			else if (tipo_doc.at(i) == 3) {
+				lh_tipo_doc.at(1).at(2)++;
+			}
+			else {}
+		}
+		else{}
+	}
+	
+	for(int i = 0; i < lh_tipo_doc.size(); i++) {
+		for(int j = 0; j < lh_tipo_doc[i].size(); j++) {
+			if(i == 0) {
+				lh_tipo_doc.at(i).at(j) = lh_tipo_doc.at(i).at(j) / count_classe.at(0).at(0);
+			}
+			else if(i == 1) {
+				lh_tipo_doc.at(i).at(j) = lh_tipo_doc.at(i).at(j) / count_classe.at(0).at(1);
+			}
+		}
+	}
+	
+	return lh_tipo_doc;
+}
+
