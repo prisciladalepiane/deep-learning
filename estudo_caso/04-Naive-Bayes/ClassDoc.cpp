@@ -494,3 +494,34 @@ vector<vector<double> > likelihoodcertificado_valido (vector<double> classe, vec
 	return lh_certificado_valido;
 }
 
+/* -------------------- PARTE 9 -------------------- */
+
+// Calcula a média da variável uso_dias nos dados de treino
+vector<vector<double> > uso_diasMean (vector<double> classe, vector<double> uso_dias, vector<vector<double> > count_classe) {
+
+	// Matriz 1x2
+	vector<vector<double> > mean(1, vector<double> (2, 0));
+		
+	for(int i = 0; i < classe.size(); i++) {
+		if(classe.at(i) == 0) {
+			mean.at(0).at(0) += uso_dias.at(i);
+		}
+		else if(classe.at(i) == 1) {
+			mean.at(0).at(1) += uso_dias.at(i);
+		}
+		else{}
+	}
+		
+	for(int i = 0; i < mean.size(); i++) {
+		for(int j = 0; j < mean[i].size(); j++) {
+			if(j == 0) {
+				mean.at(i).at(j) = mean.at(i).at(j) / count_classe.at(0).at(0);
+			}
+			else if(j == 1) {
+				mean.at(i).at(j) = mean.at(i).at(j) / count_classe.at(0).at(1);
+			}
+		}
+	}
+	return mean;
+}
+

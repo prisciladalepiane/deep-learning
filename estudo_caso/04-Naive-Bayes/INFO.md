@@ -116,3 +116,10 @@ Observe que em seguida, o código percorre os vetores de entrada classe e certif
 
 E por fim, o código normaliza as contagens na matriz, dividindo cada valor pela contagem total de sua respectiva classe, que é fornecida pelo vetor count_classe. O resultado é uma matriz de probabilidades condicionais, que representa a probabilidade de certificado_valido para cada classe nos dados de treino.
 
+## PARTE 9 - Função para calcular a Média de diferentes classes
+
+O objetivo dessa parte do código é calcular a média da variável uso_dias para diferentes classes nos dados de treino. Inicialmente, ele cria uma matriz 1x2 para armazenar as somas dos valores de uso_dias para cada classe.
+
+O código então percorre os vetores de entrada classe e uso_dias, somando os valores de uso_dias nas posições apropriadas da matriz de soma, dependendo da classe correspondente. Isso é feito usando um loop que verifica a classe de cada instância e adiciona o valor de uso_dias à soma acumulada para essa classe.
+
+E finalmente, o código normaliza as somas dividindo cada valor pela contagem total de instâncias em cada classe, fornecida pelo vetor count_classe. O resultado é uma matriz que representa a média de uso_dias para cada classe nos dados de treino.
