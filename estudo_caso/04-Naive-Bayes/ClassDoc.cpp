@@ -656,3 +656,26 @@ vector<vector<double> > confusionMatrix(vector<double> matA, vector<double> matB
 	return table;
 }
 
+/* -------------------- PARTE 15 -------------------- */
+
+// Retorna a acurácia
+double accuracy(vector<double> matA, vector<double> matB) {
+	int matARow = matA.size();
+	int matBRow = matB.size();	
+	
+	if((matARow != matBRow)) {
+		cout << "Erro ao calcular a acurácia. As dimensões precisam ser iguais." << endl;
+	}
+		
+	double sum = 0;
+	
+	for(int i = 0; i < matA.size(); i++) {
+		if(matA.at(i) == matB.at(i)) {
+				sum++;
+		}
+
+	}	
+	return sum / matA.size();
+}
+
+#pragma GCC diagnostic pop

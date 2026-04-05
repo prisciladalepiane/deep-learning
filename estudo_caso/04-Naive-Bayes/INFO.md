@@ -166,3 +166,13 @@ Observe que primeiro, ele inicializa uma matriz 2x2 para armazenar esses valores
 
 O resultado é uma matriz que resume a performance do modelo de classificação, fornecendo informações sobre quantas previsões foram corretas (tanto positivas quanto negativas) e quantas foram incorretas (tanto falsos positivos quanto falsos negativos). Isso permite uma análise detalhada da precisão e dos erros do modelo.
 
+## PARTE 15 - Função para calcular a Acurácia
+
+Na última parte de implementação do projeto veja que o código calcula a acurácia de um modelo de classificação comparando as previsões com os resultados reais. A acurácia é a proporção de previsões corretas em relação ao total de previsões feitas.
+
+Inicialmente, o código verifica se os tamanhos dos vetores de previsões e resultados reais são iguais, assegurando que possam ser comparados diretamente. Se os tamanhos forem diferentes, ele emite uma mensagem de erro.
+
+Em seguida, o código percorre os vetores de previsões e resultados reais, contando quantas vezes eles coincidem. Essa contagem de previsões corretas é então dividida pelo total de previsões para calcular a acurácia, que é retornada como um valor entre 0 e 1, representando a precisão do modelo.
+
+
+https://gcc.gnu.org/onlinedocs/cpp/Pragmas.html
