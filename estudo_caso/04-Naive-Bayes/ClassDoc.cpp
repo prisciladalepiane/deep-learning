@@ -576,3 +576,15 @@ vector<vector<double> > uso_dias_metrics (vector<vector<double> > uso_diasMean, 
 	return metrics;
 }
 
+/* -------------------- PARTE 12 -------------------- */
+
+// Calcula a probabilidade da variável uso_dias
+double calc_uso_dias_lh (double v, double mean_v, double var_v) {
+	double uso_dias_lh = 0;
+	
+	// Calcula a probabilidade
+	uso_dias_lh = (1 / (sqrt(2 * M_PI * var_v))) * exp( -(pow((v - mean_v), 2)) / (2 * var_v));
+	
+	return uso_dias_lh;
+}
+

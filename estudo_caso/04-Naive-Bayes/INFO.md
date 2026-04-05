@@ -140,3 +140,12 @@ Primeiramente, ele armazena as médias de uso_dias para cada classe nas posiçõ
 
 O resultado é uma matriz 2x2 que contém as médias e os desvios padrão de uso_dias para cada classe, facilitando a análise e interpretação dessas métricas.
 
+## PARTE 12 - Função para calcular probabilidade usando Função de Densidade
+
+Nessa parte o código calcula a probabilidade da variável uso_dias para um valor específico usando a função de densidade de probabilidade de uma distribuição normal.
+
+Veja que inicialmente, ele determina a probabilidade utilizando a média e a variância fornecidas para a variável uso_dias. Esse cálculo envolve a aplicação da fórmula da distribuição normal, que leva em conta a diferença entre o valor específico e a média, ajustada pela variância.
+
+O resultado é a probabilidade associada ao valor específico de uso_dias, indicando quão provável é esse valor dentro da distribuição definida pelos parâmetros de média e variância fornecidos.
+
+A PDF é usada para calcular a probabilidade de a variável aleatória cair dentro de um determinado intervalo, através da integração da função sobre esse intervalo.
