@@ -450,3 +450,47 @@ vector<vector<double> > likelihoodtipo_doc (vector<double> classe, vector<double
 	return lh_tipo_doc;
 }
 
+/* -------------------- PARTE 8 -------------------- */
+
+// Calcula a probabilidade da variável certificado_valido nos dados de treino
+vector<vector<double> > likelihoodcertificado_valido (vector<double> classe, vector<double> certificado_valido, vector<vector<double> > count_classe) {
+	
+	// Variável 2x2
+	vector<vector<double> > lh_certificado_valido (2, vector<double>(2,0)); 			
+	
+	for(int i = 0; i < classe.size(); i++) {
+		if(classe.at(i) == 0) {
+			if(certificado_valido.at(i) == 0) {
+				lh_certificado_valido.at(0).at(0)++;
+			}
+			else if(certificado_valido.at(i) == 1) {
+				lh_certificado_valido.at(0).at(1)++;
+			}
+			else {}
+		}
+		else if(classe.at(i) == 1) {
+			if(certificado_valido.at(i) == 0) {
+				lh_certificado_valido.at(1).at(0)++;
+			}
+			else if(certificado_valido.at(i) == 1) {
+				lh_certificado_valido.at(1).at(1)++;
+			}
+			else {}
+		}
+		else{}
+	}
+
+	for(int i = 0; i < lh_certificado_valido.size(); i++) {
+		for(int j = 0; j < lh_certificado_valido[i].size(); j++) {
+			if(i == 0) {
+				lh_certificado_valido.at(i).at(j) = lh_certificado_valido.at(i).at(j) / count_classe.at(0).at(0);
+			}
+			else if(i == 1) {
+				lh_certificado_valido.at(i).at(j) = lh_certificado_valido.at(i).at(j) / count_classe.at(0).at(1);
+			}
+		}
+	}
+	
+	return lh_certificado_valido;
+}
+

@@ -108,3 +108,11 @@ Veja que no início, o código percorre os vetores de classes e tipos de documen
 
 Em seguida, essas contagens são normalizadas pela divisão pelo número total de ocorrências de cada classe, resultando em probabilidades condicionais. A matriz final, que contém essas probabilidades, é então retornada e pode ser usada para cálculos posteriores em algoritmos de classificação, como o Naive .
 
+## PARTE 8 - Função Para Calcular a Probabilidade Condicional 2
+
+Essa parte do código tem como objetivo calcular a probabilidade da variável certificado_valido dada a classe correspondente nos dados de treino. Inicialmente, ele cria uma matriz 2x2 para armazenar as contagens das combinações possíveis entre as classes e os valores de certificado_valido.
+
+Observe que em seguida, o código percorre os vetores de entrada classe e certificado_valido, atualizando a matriz de contagem com base nas ocorrências observadas para cada combinação de valores. Este processo é feito usando um loop que verifica a condição de cada classe e o valor associado de certificado_valido, incrementando as posições apropriadas na matriz.
+
+E por fim, o código normaliza as contagens na matriz, dividindo cada valor pela contagem total de sua respectiva classe, que é fornecida pelo vetor count_classe. O resultado é uma matriz de probabilidades condicionais, que representa a probabilidade de certificado_valido para cada classe nos dados de treino.
+
