@@ -131,3 +131,12 @@ O objetivo dessa parte do código é calcular a variância da variável uso_dias
 O código então calcula as médias de uso_dias para cada classe, utilizando uma função previamente definida. Em seguida, ele percorre os vetores de entrada classe e uso_dias, acumulando as somas dos quadrados das diferenças entre os valores de uso_dias e as médias calculadas, para cada classe correspondente.
 
 E ao final, o código normaliza essas somas dividindo-as pelo número de instâncias menos um em cada classe, fornecido pelo vetor count_classe. O resultado é uma matriz que representa a variância de uso_dias para cada classe nos dados de treino.
+
+## PARTE 11 - Função para formatar as métricas
+
+Na parte 11 o código organiza as métricas da variável uso_dias em uma matriz 2x2. Ele utiliza as médias e variâncias previamente calculadas para uso_dias.
+
+Primeiramente, ele armazena as médias de uso_dias para cada classe nas posições apropriadas da matriz. Em seguida, ele calcula a raiz quadrada das variâncias, convertendo-as em desvio padrão, e armazena esses valores na matriz.
+
+O resultado é uma matriz 2x2 que contém as médias e os desvios padrão de uso_dias para cada classe, facilitando a análise e interpretação dessas métricas.
+

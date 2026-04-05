@@ -560,3 +560,19 @@ vector<vector<double> > uso_diasVar (vector<double> classe, vector<double> uso_d
 	return var;
 }
 
+/* -------------------- PARTE 11 -------------------- */
+
+// Formata as métricas (média e variância) da variável uso_dias em uma matriz 2x2
+vector<vector<double> > uso_dias_metrics (vector<vector<double> > uso_diasMean, vector<vector<double> > uso_diasVar) {
+
+	// Matriz 2x2
+	vector<vector<double> > metrics(2, vector<double>(2, 0));  
+	
+	metrics.at(0).at(0) = uso_diasMean.at(0).at(0);
+	metrics.at(0).at(1) = sqrt(uso_diasVar.at(0).at(0));
+	metrics.at(1).at(0) = uso_diasMean.at(0).at(1);
+	metrics.at(1).at(1) = sqrt(uso_diasVar.at(0).at(1));
+	
+	return metrics;
+}
+
