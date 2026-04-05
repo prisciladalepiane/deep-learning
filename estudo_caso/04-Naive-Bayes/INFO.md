@@ -149,3 +149,11 @@ Veja que inicialmente, ele determina a probabilidade utilizando a média e a var
 O resultado é a probabilidade associada ao valor específico de uso_dias, indicando quão provável é esse valor dentro da distribuição definida pelos parâmetros de média e variância fornecidos.
 
 A PDF é usada para calcular a probabilidade de a variável aleatória cair dentro de um determinado intervalo, através da integração da função sobre esse intervalo.
+
+## PARTE 13 - Função para implementar o algoritmo
+
+Na parte 13 o código implementa o Teorema de Bayes para calcular as probabilidades de duas classes baseadas em várias características observadas. Ele começa calculando as probabilidades numéricas para cada classe, utilizando as probabilidades a priori e as verossimilhanças das variáveis observadas (tipo_doc, certificado_valido e uso_dias).
+
+Primeiramente, são calculadas as probabilidades numeradoras para cada classe, combinando as verossimilhanças de tipo_doc e certificado_valido, a probabilidade a priori da classe e a verossimilhança de uso_dias. Isso resulta em dois valores, cada um representando a probabilidade conjunta das variáveis observadas para uma classe específica.
+
+Em seguida, é calculado o denominador que normaliza essas probabilidades. O denominador é a soma das probabilidades numeradoras de ambas as classes, garantindo que a soma das probabilidades resultantes seja igual a 1. Por fim, as probabilidades normalizadas para cada classe são armazenadas e retornadas, representando as probabilidades condicionais das classes dadas as variáveis observadas....

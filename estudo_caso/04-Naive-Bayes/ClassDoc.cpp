@@ -588,3 +588,31 @@ double calc_uso_dias_lh (double v, double mean_v, double var_v) {
 	return uso_dias_lh;
 }
 
+/* -------------------- PARTE 13 -------------------- */
+
+// Implementando a fórmula do Teorema de Bayes
+vector<vector<double> > calc_raw_prob(double tipo_doc, double certificado_valido, double uso_dias, vector<vector<double> > apriori, vector<vector<double> > lh_tipo_doc, vector<vector<double> > lh_certificado_valido, vector<vector<double> > uso_dias_mean, vector<vector<double> > uso_dias_var) {
+	
+	// Matriz 1x2
+	vector<vector<double> > raw(1, vector<double> (2, 0)); 
+	
+	// Probabilidade da variável de saída
+	double num_s = lh_tipo_doc.at(1).at(tipo_doc-1) * lh_certificado_valido.at(1).at(certificado_valido) * apriori.at(0).at(1) *
+					calc_uso_dias_lh(uso_dias, uso_dias_mean.at(0).at(1), uso_dias_var.at(0).at(1));		
+					
+	// Probabilidade das variáveis de entrada
+	double num_p = lh_tipo_doc.at(0).at(tipo_doc-1) * lh_certificado_valido.at(0).at(certificado_valido) * apriori.at(0).at(0) *
+					calc_uso_dias_lh(uso_dias, uso_dias_mean.at(0).at(0), uso_dias_var.at(0).at(0));				
+		
+	// Denominador
+	double denominator = lh_tipo_doc.at(1).at(tipo_doc-1) * lh_certificado_valido.at(1).at(certificado_valido) *
+					calc_uso_dias_lh(uso_dias, uso_dias_mean.at(0).at(1), uso_dias_var.at(0).at(1)) * apriori.at(0).at(1)
+					+ lh_tipo_doc.at(0).at(tipo_doc-1) * lh_certificado_valido.at(0).at(certificado_valido) * 
+					calc_uso_dias_lh(uso_dias, uso_dias_mean.at(0).at(0), uso_dias_var.at(0).at(0)) * apriori.at(0).at(0);
+		
+	raw.at(0).at(1) = num_s / denominator;
+	raw.at(0).at(0) = num_p / denominator;
+	
+	return raw;
+}
+
