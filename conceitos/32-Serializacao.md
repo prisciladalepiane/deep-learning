@@ -91,3 +91,28 @@ Exemplos de Endpoints:
 **Monitoramento de Performance**: Em produção, a API deve monitorar continuamente o desempenho do modelo, não apenas em termos de tempo de resposta, mas também a precisão das previsões ao longo do tempo. Modelos podem sofrer degradação de performance, e a API pode precisar fornecer alertas para re-treinamento.
 
 APIs e endpoints são o mecanismo essencial para integrar modelos de aprendizado de máquina a sistemas em tempo real e permitir que soluções de Machine Learning sejam escaláveis e acessíveis.
+
+## Containers e Micro-Serviços Para Deploy de Modelos
+
+Containers e Micro-Serviços são tecnologias essenciais para o deploy de modelos de aprendizado de máquina em produção, pois oferecem escalabilidade, portabilidade e facilidade de gerenciamento. Abaixo está uma descrição de cada um.
+
+### Containers
+
+Containers são ambientes isolados que encapsulam uma aplicação e todas as suas dependências (bibliotecas, runtime, etc.), garantindo que o modelo funcione de maneira consistente em qualquer ambiente, seja local ou na nuvem. No contexto de deploy de modelos de Machine Learning, containers como Docker são amplamente usados.
+
+Vantagens de usar containers:
+
+- Portabilidade: O modelo, junto com seu ambiente de execução, pode ser movido para diferentes sistemas operacionais ou infraestruturas sem ajustes.
+- Isolamento: Cada container é isolado, garantindo que o modelo tenha acesso exclusivo a seus recursos, evitando conflitos entre bibliotecas ou frameworks.
+- Escalabilidade: Facilita a criação de múltiplas instâncias do modelo, permitindo escalar rapidamente de acordo com a demanda.
+
+### Micro-Serviços
+
+Micro-serviços são uma arquitetura de software onde diferentes componentes de uma aplicação são divididos em serviços independentes, que podem ser desenvolvidos, implantados e escalados separadamente. No deploy de modelos, o modelo de Machine Learning é tratado como um micro-serviço, o que permite que ele seja acessado por outras partes do sistema por meio de APIs.
+
+Vantagens dos micro-serviços:
+
+- Desenvolvimento e deploy independentes: O modelo pode ser atualizado e implantado sem afetar o resto do sistema.
+- Escalabilidade granular: É possível escalar apenas o serviço de inferência de modelo, sem a necessidade de escalar todo o sistema.
+- Manutenção facilitada: A separação de responsabilidades entre diferentes micro-serviços torna o sistema mais fácil de manter e evoluir.
+- Containers e micro-serviços combinados: Frequentemente, containers são usados para implantar micro-serviços, facilitando o gerenciamento e a escalabilidade de cada componente de forma independente. Essa combinação é amplamente usada para deploy de modelos de aprendizado de máquina em produção.
