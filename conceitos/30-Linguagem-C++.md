@@ -642,6 +642,22 @@ Usa-se a ferramenta de build gerada pelo CMake (como make ou ninja) para compila
 
 CMake simplifica e automatiza o processo de configuração e construção de projetos de software complexos, especialmente quando há a necessidade de compilar o código em múltiplas plataformas e com diferentes configurações de build. Ele é uma ferramenta essencial para desenvolvedores que trabalham em ambientes de desenvolvimento multiplataforma e que buscam eficiência no gerenciamento de dependências e configurações de compilação.
 
+## Framework C++ Para Deploy de API
+
+**Crow** é um web framework voltado para a criação de servidores HTTP. Ela é usada para desenvolver aplicações web, APIs RESTful e servidores com suporte a rotas e middleware, permitindo que você crie rapidamente serviços de rede com C++.
+
+Aqui estão alguns dos principais recursos do Crow:
+
+**Rotas definidas de forma simples**: A biblioteca permite definir rotas HTTP usando funções lambda e manipuladores de rota, facilitando a associação de URLs a funcionalidades.
+
+**Suporte a JSON**: Possui integração nativa para manipulação de dados em formato JSON, o que é muito útil ao criar APIs RESTful.
+
+**Middleware**: Suporte para usar middleware para interceptar e modificar requisições e respostas, fornecendo uma maneira de adicionar camadas de funcionalidade, como autenticação ou registro de log.
+
+**Desempenho**: Crow é conhecida por ser uma biblioteca leve e de alto desempenho, adequada para criar serviços de rede rápidos.
+
+documentação oficial: https://crowcpp.org/master/
+
 ## Bibliografia complementar
 
 C++ Coding style
