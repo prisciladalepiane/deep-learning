@@ -44,8 +44,8 @@ Cada conexão entre neurônios tem um peso ajustado durante o treinamento, de mo
 Modelos de Deep Learning têm sido usados para treinar agentes em jogos, desde simples jogos de tabuleiro, como Go, até complexos ambientes de simulação.
 
 ### 5.Medicina e Saúde: 
-Diagnóstico Médico: Analisar imagens médicas para detectar doenças.
-Predição de Doenças: Usar dados médicos para prever o risco de doenças futuras em pacientes.
+**Diagnóstico Médico**: Analisar imagens médicas para detectar doenças.
+**Predição de Doenças**: Usar dados médicos para prever o risco de doenças futuras em pacientes.
 
 ### 6.Veículos Autônomos: 
 Deep Learning é fundamental para sistemas de condução autônoma, permitindo que veículos reconheçam objetos, pessoas, sinais de trânsito e outras entidades importantes para a navegação segura.
@@ -54,7 +54,9 @@ Deep Learning é fundamental para sistemas de condução autônoma, permitindo q
 Modelos de Deep Learning combinados com técnicas de aprendizado por reforço, têm sido usados para treinar agentes a realizar tarefas em ambientes simulados ou reais.
 
 ### 8.Anomalia e Detecção de Fraude: 
-Identificar atividades suspeitas em grandes conjuntos de dados, como transações de cartão de crédito. O Deep Learning tem revolucionado muitas áreas da IA, permitindo avanços que antes eram considerados desafiadores ou impossíveis. No entanto, também é importante reconhecer suas limitações e os desafios associados, como a necessidade de grandes conjuntos de dados, poder computacional significativo e potenciais preocupações éticas e de interpretabilidade.
+Identificar atividades suspeitas em grandes conjuntos de dados, como transações de cartão de crédito. 
+
+> O Deep Learning tem revolucionado muitas áreas da IA, permitindo avanços que antes eram considerados desafiadores ou impossíveis. No entanto, também é importante reconhecer suas limitações e os desafios associados, como a necessidade de grandes conjuntos de dados, poder computacional significativo e potenciais preocupações éticas e de interpretabilidade.
 
 ## Desafios e Limitações do Deep Learning
 
@@ -74,4 +76,4 @@ REFERÊNCIAS
 
 [OpenAI](https://openai.com/Modelos)
 
-[Determinísticos e Estocásticos em IA –Entendendo Diferenças e Riscos dos LLMs](https://blog.dsacademy.com.br/modelos-deterministicos-e-estocasticos-em-ia-entendendo-diferencas-e-riscos-dos-llms-parte-1/)
+[Determinísticos e Estocásticos em IA – Entendendo Diferenças e Riscos dos LLMs](https://blog.dsacademy.com.br/modelos-deterministicos-e-estocasticos-em-ia-entendendo-diferencas-e-riscos-dos-llms-parte-1/)
