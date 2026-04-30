@@ -52,7 +52,6 @@ Reduzir o número de variáveis de uma imagem mantendo suas características pri
 
 5. **Redes Adversárias Generativas (GANs)**
 
-O que são:
 Formadas por duas redes, um gerador e um discriminador, que competem entre si: o gerador cria dados falsos e o discriminador tenta distinguir os reais dos falsos.
 
 Uso comum:
@@ -63,7 +62,6 @@ Criar rostos humanos inexistentes com aparência real.
 
 6. **Redes Siamesas**
 
-O que são:
 Usam duas (ou mais) redes idênticas com pesos compartilhados para comparar a similaridade entre entradas.
 
 Uso comum:
@@ -93,7 +91,7 @@ Exemplo:
 ChatGPT — que entende e gera texto com base em grandes quantidades de contexto.
 
 
-## Redes Neurais Convolucionais (CNNs) e Redes Neurais Recorrentes (RNNs)
+## Redes Neurais Convolucionais (CNNs)
 
 Redes Neurais Convolucionais (CNNs) e Redes Neurais Recorrentes (RNNs) são duas arquiteturas fundamentais de redes neurais profundas que se destacam em diferentes tipos de tarefas de aprendizado de máquina. 
 
@@ -104,6 +102,8 @@ A arquitetura de uma CNN é caracterizada por camadas convolucionais que aplicam
 Após cada camada convolucional, normalmente há uma camada de pooling, que serve para reduzir as dimensões espaciais e agrupar características importantes. No final da CNN, há camadas densamente conectadas que interpretam as características de alto nível extraídas pelas camadas convolucionais e de pooling para fazer previsões ou classificações.
 
 A arquitetura CNN surgiu no final da década de 80, mas ganhou impulso nos anos 2000. Técnicas modernas atuais, como os Vision Transformers, usam camadas convolucionais ou redes convolucionais inteiras como backbone (parte central da arquitetura), como aliás veremos aqui neste curso. 
+
+## Redes Neurais Recorrentes (RNNs)
 
 As RNNs são especialmente adequadas para dados sequenciais, como linguagem natural ou séries temporais, onde a ordem e o contexto são importantes. A propriedade distintiva das RNNs é a sua capacidade de manter um estado ou memória ao longo do tempo, usando suas conexões recorrentes, onde saídas de etapas anteriores são utilizadas como entrada juntamente com novos dados de entrada. 
 
