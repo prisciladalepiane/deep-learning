@@ -93,11 +93,11 @@ O **Backpropagation** é o **mecanismo de aprendizado das redes neurais**, que p
 
 O backpropagation, também conhecido como retropropagação, é um algoritmo fundamental em Deep Learning, utilizado para reinar redes neurais. Seu papel principal é **calcular o gradiente da função de perda** (ou erro) em relação a cada peso da rede, de modo eficiente, através da aplicação da regra da cadeia do cálculo diferencial. Este gradiente indica a direção e magnitude de mudança para cada peso, a fim de minimizar o erro da rede.
 
-Quando alimentamos uma rede neural com uma entrada, a informação flui da camada de entrada através das camadas ocultas até a camada de saída em um processo chamado "feedforward". Ao comparar a saída produzida pela rede com a saída desejada, obtemos um valor de erro utilizando uma função de perda. O backpropagation entra em cena para determinar **como esse erro se propaga de volta através da rede**, do final para o início. Ele **calcula quanto cada peso na rede contribuiu para o erro**, fornecendo um mapa de como ajustar os pesos para melhorar o desempenho da rede. No entanto, saber o gradiente por si só não é suficiente. É aqui que entra a otimização. O processo de otimização ajusta iterativamente os pesos da rede na direção oposta ao gradiente, buscando minimizar o erro. O tamanho do ajuste é geralmente determinadopor um parâmetro chamado "taxa de aprendizado". Um dos otimizadores mais básicos e amplamente conhecidos é o Gradiente Descendente (e suas variantes como Gradiente Descendente Estocástico e Gradiente Descendente em Mini-lotes). No entanto, existem muitos outros otimizadores, como Adam, RMSprop e Adagrad, que não só consideram o gradiente atual, mas também incorporam informações de gradientes anteriores para fazer atualizações mais informadas.
+Quando alimentamos uma rede neural com uma entrada, a informação flui da camada de entrada através das camadas ocultas até a camada de saída em um processo chamado "feedforward". Ao comparar a saída produzida pela rede com a saída desejada, obtemos um valor de erro utilizando uma função de perda. O backpropagation entra em cena para determinar **como esse erro se propaga de volta através da rede**, do final para o início. Ele **calcula quanto cada peso na rede contribuiu para o erro**, fornecendo um mapa de como ajustar os pesos para melhorar o desempenho da rede. 
 
-No entanto, saber o gradiente por si só não é suficiente. É aqui que entra a otimização. O processo de otimização ajusta iterativamente os pesos da rede na direção oposta ao gradiente, buscando minimizar o erro. O tamanho do ajuste é geralmente determinadopor um parâmetro chamado "taxa de aprendizado". Um dos otimizadores mais básicos e amplamente conhecidos é o Gradiente Descendente (e suas variantes como Gradiente Descendente Estocástico e Gradiente Descendente em Mini-lotes). No entanto, existem muitos outros otimizadores, como Adam, RMSprop e Adagrad, que não só consideram o gradiente atual, mas também incorporam informações de gradientes anteriores para fazer atualizações mais informadas.
+No entanto, saber o gradiente por si só não é suficiente. É aqui que entra a **otimização**. O processo de otimização ajusta iterativamente os pesos da rede na direção oposta ao gradiente, buscando minimizar o erro. O tamanho do ajuste é geralmente determinado por um parâmetro chamado "taxa de aprendizado". Um dos otimizadores mais básicos e amplamente conhecidos é o Gradiente Descendente (e suas variantes como Gradiente Descendente Estocástico e Gradiente Descendente em Mini-lotes). No entanto, existem muitos outros otimizadores, como Adam, RMSprop e Adagrad, que não só consideram o gradiente atual, mas também incorporam informações de gradientes anteriores para fazer atualizações mais informadas.
 
-Juntos, o backpropagation e os algoritmos de otimização formam a espinha dorsal do treinamento de redes neurais em Deep Learning. Eles permitem que a rede aprenda padrões complexos e não lineares nos dados, ajustando-se iterativamente para reduzir o erro e melhorar a precisão. Esta combinação de calcular gradientes e ajustar pesos é repetida muitas vezes até que a rede alcance um desempenho satisfatório ou até que se cumpra algum critério de parada definido
+Juntos, o **backpropagation e os algoritmos de otimização formam a espinha dorsal do treinamento de redes neurais em Deep Learning**. Eles permitem que a rede aprenda padrões complexos e não lineares nos dados, ajustando-se iterativamente para reduzir o erro e melhorar a precisão. Esta combinação de calcular gradientes e ajustar pesos é repetida muitas vezes até que a rede alcance um desempenho satisfatório ou até que se cumpra algum critério de parada definido
 
 
 # Compreendendo o Algoritmo Backpropagation
@@ -108,7 +108,6 @@ O Processo de Backpropagation é Composto Pelas Seguintes Etapas:
 
 ## Etapa 1. Propagação para Frente (Forward Propagation)
 
-
 • A entrada é fornecida à rede neural.
 
 • Esta entrada passa pelas várias camadas da rede, onde cada neurônio processa a entrada e a passa para a próxima camada.
@@ -117,8 +116,6 @@ O Processo de Backpropagation é Composto Pelas Seguintes Etapas:
 
 
 ## Etapa 2. Cálculo do Erro:
-
-
 
 • A saída gerada pela rede é comparada com a saída esperada para calcular o erro. Geralmente, usa-se uma função de perda para isso, como o erro quadrático médio.
 

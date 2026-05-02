@@ -9,7 +9,11 @@ Em Deep Learning, as funções de ativação desempenham um papel essencialem re
 ## Papéis das funções de ativação:
 
 ### Introdução de Não-linearidade
-Uma das principais razões para usar funções de ativação é introduzir não-linearidade nos cálculos da rede neural. Sem funções de ativação, mesmo que tenhamos várias camadas em uma rede neural, tudo se reduziria a uma operação linear. A não-linearidade permite que a rede neural modele funções mais complexas e capture padrões intrincados nos dados.
+Uma das principais razões para usar funções de ativação é introduzir não-linearidade nos cálculos da rede neural. Sem funções de ativação, mesmo que tenhamos várias camadas em uma rede neural, tudo se reduziria a uma operação linear. A não-linearidade permite que a rede neural modele funções mais complexas e capture padrões intrincados nos dados, como:
+
+- relações entre pixels em uma imagem,
+- dependências temporais em séries de tempo,
+- nuances de significado em textos.
 
 ### Ativação dos Neurônios:
 As funções de ativação determinam a saída de um neurônio quando recebe uma entrada ou conjunto de entradas. Baseando-se nessa saída, o neurônio pode ser considerado "ativado" ou não.
@@ -20,14 +24,6 @@ Algumas funções de ativação são contínuas e diferenciáveis. Isso é essen
 ### Regularização: 
 Algumas funções de ativação, como a função ReLU (Rectified Linear Activation) e suas variantes, podem ajudar na regularização do modelo, tornando-o menos propenso a overfitting.
 
-
-
-## Função de ativação — papel principal
-Permitir que a rede aprenda padrões não lineares, como:
-
-- relações entre pixels em uma imagem,
-- dependências temporais em séries de tempo,
-- nuances de significado em textos.
 
 ## Variedade de Funções: 
 
@@ -61,9 +57,9 @@ Apesar de sua importância, as funções de ativação não são isentas de desa
 
 > As funções de ativação são componentes essenciais das redes neurais em Deep Learning, permitindo que elas capturem e representem complexidades nos dados. A escolha da função de ativação apropriada depende da arquitetura da rede e da natureza do problema que está sendo tratado. 
 
-# Principais Funções
+## Principais Funções
 
-## Sigmoid
+### Sigmoid
 
 A Sigmoid é uma função de ativação amplamente utilizada nas primeiras redes neurais e ainda muito comum em problemas de classificação binária.
 
@@ -99,7 +95,7 @@ $$
 Ou seja:
 
 - Se \(x < 0\), saída = 0  
-- Se \(x \ge 0\), saída = \(x\)
+- Se \(x > 0\), saída = x
 
 Ela introduz **não-linearidade** na rede neural, permitindo que modelos profundos aprendam relações complexas.
 
