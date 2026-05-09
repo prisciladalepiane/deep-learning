@@ -33,7 +33,7 @@ Quanto **menor o valor da perda**, **melhor o modelo está aprendendo**.
 | Tipo de Problema | Função de Perda | Fórmula | Descrição |
 |------------------|----------------|----------|------------|
 | **Regressão** | **Erro Quadrático Médio (MSE)** | $$L = \frac{1}{n} \sum_i (y_i - \hat{y}_i)^2$$ | Mede o erro médio ao quadrado entre as previsões e os valores reais. Penaliza erros grandes. |
-| **Regressão** | **Erro Absoluto Médio (MAE)** | $$L = \frac{1}{n} \sum_i |y_i - \hat{y}_i|$$ | Mede a diferença média absoluta entre previsão e verdade. Menos sensível a outliers. |
+| **Regressão** | **Erro Absoluto Médio (MAE)** | $$L = \frac{1}{n} \sum_i \|y_i - \hat{y}_i\|$$ | Mede a diferença média absoluta entre previsão e verdade. Menos sensível a outliers. |
 | **Classificação Binária** | **Entropia Cruzada Binária (Binary Cross-Entropy)** | $$L = -\frac{1}{n} \sum_i [y_i \log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)]$$ | Mede a divergência entre a distribuição real e a predita (probabilidades). |
 | **Classificação Multiclasse** | **Entropia Cruzada Categórica (Categorical Cross-Entropy)** | $$L = -\sum_i y_i \log(\hat{y}_i)$$ | Usada com *Softmax*. Penaliza previsões incorretas mais fortemente. |
 | **Classificação com Margem** | **Hinge Loss** | $$L = \max(0, 1 - y \cdot \hat{y})$$ | Usada em SVMs — força as classes a ficarem separadas por uma margem. |

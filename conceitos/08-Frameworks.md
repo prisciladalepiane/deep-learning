@@ -40,7 +40,9 @@ Se você instalar  ambos  no sistema, um sobrescreve o outro. Ambientes virtuais
 - Um diretório separado com todos os pacotes instalados para aquele ambiente. 
 - Scripts de ativação e desativação do ambiente.
 
-O _conda env_ é um recurso do Conda (gerenciador de pacotes e ambientes) que permite criar ambientes isolados com versões específicas de Python, bibliotecas e dependências. O conda env é um comando que gerencia ambientes virtuais no Conda, garantindo que diferentes  projetos  possam  usar  configurações e versões de pacotes independentes uns dosoutros.Benefícios:
+O **_conda env_** é um recurso do Conda (gerenciador de pacotes e ambientes) que permite criar ambientes isolados com versões específicas de Python, bibliotecas e dependências. O conda env é um comando que gerencia ambientes virtuais no Conda, garantindo que diferentes  projetos  possam  usar  configurações e versões de pacotes independentes uns dosoutros.
+
+Benefícios:
 
 -Isolamento total: evita conflitos de dependências entre projetos. \
 -Reprodutibilidade: facilita replicar ambientes em outras máquinas \
