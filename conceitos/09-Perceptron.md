@@ -35,19 +35,15 @@ Pontos principais dessa evolução:
 **Limitações do Perceptron**
 
 - O Perceptron original de Rosenblatt era um modelo de camada única que só conseguia resolver problemas linearmentes separáveis.
-
 - O Perceptron não conseguia resolver certos tipos de problema, como a função XOR, que é não-linearmente separável.
 
 **Avanços e MLP**
 
 - Nos anos 1980, os pesquisadores começaram a explorar modelos de redes neurais com múltiplas camadas, que poderiam aprender representações mais complexas dos dados.
-
 - A introdução do algoritmo de retropropagação (_backpropagation_) permitiu que as redes com múltiplas camadas ajustassem seus pesos internos de forma eficaz e aprendessem a representar funções não-lineares.
 
 **Contribuições das MLPs:**
 
 - A retropropagação forneceu um meio para as redes neurais aprenderem a partir de erros, ajustando pesos não apenas na camada de saída, mas também em camadas ocultas.
-
 - As MLPs são compostas por uma camada de entrada, uma ou mais camadas ocultas e uma camada de saída, com cada camada contendo um número de neurônios.
-
 - Cada neurônio nas camadas ocultas pode modelar interações não-lineares entre as entradas, e a adição de múltiplas camadas ocultas permite que a rede aprenda representações cada vez mais complexas.
