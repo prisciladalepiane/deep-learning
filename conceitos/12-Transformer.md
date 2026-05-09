@@ -73,9 +73,9 @@ De forma simples, o funcionamento é este:
 
 Cada palavra (já transformada em vetor pelo embedding) é usada para criar três vetores diferentes: Query, Key e Value.
 
-Query = o que estou procurando
-Key = o que eu ofereço
-Value = a informação que eu carrego
+**Query** = o que estou procurando\
+**Key** = o que eu ofereço\
+**Value** = a informação que eu carrego
 
 Para cada palavra da frase, o modelo compara sua Query com todas as Keys das outras palavras.
 Isso gera uma pontuação que indica o quanto uma palavra deve olhar para outra.
@@ -177,7 +177,6 @@ Os valores finais da atenção são:
 ```
 attention_output = weights × V
 ```
-
 
 Ou seja: cada palavra vira uma média ponderada (com pesos inteligentes) da informação de todas as outras palavras.
 
