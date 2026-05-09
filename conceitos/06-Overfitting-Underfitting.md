@@ -1,11 +1,12 @@
-# Compreendendo os conceitos de overfitting, underfitting e regularização
+## Overfitting E underfitting
 
 Em Machine Learning e Deep Learning, compreender os conceitos de overfitting, underfitting e regularização é essencial para desenvolver modelos robustos e precisos. 
-
 
 O **overfitting** ocorre quando um modelo aprende os dados de treinamento tão profundamente que também começa a aprender o "ruído" ou as variações aleatórias presentes nos dados. Em vez de generalizar bem a partir dos dados de treinamento para dados não vistos, ele se torna "excessivamente adaptado" ou "memoriza" os dados de treinamento. Como resultado, enquanto o modelo pode apresentar um desempenho excepcionalmente bom no conjunto de treinamento, ele falha ao tentar prever novos dados, resultando em baixa precisão no conjunto de teste ou em dados reais.
 
 **Underfitting** é o oposto do overfitting. Ocorre quando o modelo é muito simples para capturar a complexidade dos dados. Neste caso, o modelo não se ajusta bem nem aos dados de treinamento nem aos dados de teste. Isso pode ser devido a um modelo inadequado, poucos recursos ou treinamento insuficiente. Em suma, o modelo não aprendeu os padrões subjacentes dos dados.
+
+## Regularização
 
 A **regularização** é uma técnica utilizada para combater o overfitting. Ela adiciona um termo de penalização à função de perda do modelo, restringindo a capacidade do modelo de ajustar-se perfeitamente aos dados de treinamento. Em outras palavras, a regularização penaliza certos valores dos parâmetros do modelo (como grandes valores de pesos em redes neurais) para garantir que o modelo permaneça mais simples e, portanto, mais propenso a generalizar bem para dados não vistos. Existem várias técnicas de regularização, incluindo:
 
