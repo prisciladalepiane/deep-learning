@@ -1,4 +1,4 @@
-# Construção do Modelo de Deep Learning
+# Construção do Modelo de Deep Learning - Convolutional Neural Network (CNNs)
 
 ## Arquitetura Geral das CNNs
 
@@ -62,13 +62,13 @@ A convolução é uma operação matemática que envolve a aplicação de um fil
 
 Como a Convolução é Aplicada em Dados de Imagem?
 
-1. Definição de Filtro: Um filtro é definido por uma matriz pequena (por exemplo, 3x3 ou 5x5) de pesos. Cada filtro é projetado para detectar um tipo específico de característica na imagem.
+1. **Definição de Filtro**: Um filtro é definido por uma matriz pequena (por exemplo, 3x3 ou 5x5) de pesos. Cada filtro é projetado para detectar um tipo específico de característica na imagem.
 
-2. Deslizamento do Filtro: O filtro é aplicado a cada local possível na imagem. Isso é feito deslizando o filtro sobre a imagem, normalmente movendo-se um pixel de cada vez (stride de 1), mas esse passo pode ser ajustado.
+2. **Deslizamento do Filtro**: O filtro é aplicado a cada local possível na imagem. Isso é feito deslizando o filtro sobre a imagem, normalmente movendo-se um pixel de cada vez (stride de 1), mas esse passo pode ser ajustado.
 
-3. Cálculo da Convolução: Para cada posição do filtro, a operação de convolução é realizada calculando o produto escalar entre os pesos do filtro e os valores dos pixels da imagem sob o filtro.
+3. **Cálculo da Convolução**: Para cada posição do filtro, a operação de convolução é realizada calculando o produto escalar entre os pesos do filtro e os valores dos pixels da imagem sob o filtro.
 
-4. Geração do Mapa de Características: O resultado dessa operação em cada posição é um novo valor que é colocado no mapa de características. Esse processo é repetido até que toda a imagem tenha sido processada, resultando em um mapa completo de características que ressalta os padrões detectados pelo filtro.
+4. **Geração do Mapa de Características**: O resultado dessa operação em cada posição é um novo valor que é colocado no mapa de características. Esse processo é repetido até que toda a imagem tenha sido processada, resultando em um mapa completo de características que ressalta os padrões detectados pelo filtro.
 
 ### Por Que a Convolução é Efetiva?
 

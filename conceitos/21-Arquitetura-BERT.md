@@ -19,7 +19,7 @@ Uma das grandes vantagens do BERT Multilíngue é sua capacidade de transferir o
 
 ### Treinamento e Ajuste Fino (Fine-tuning)
 
-Assim como o BERT original, o BERT Multilíngue pode ser ajustado (fine-tuned) para tarefas específicas. Isso significa que você pode pegar o modelo pré-treinado e ajustá-lo com um conjunto de dados menor, específico para uma tarefa ou idioma específico, como faremos no projeto deste capítulo.
+Assim como o BERT original, o BERT Multilíngue pode ser ajustado (fine-tuned) para tarefas específicas. Isso significa que você pode pegar o modelo pré-treinado e ajustá-lo com um conjunto de dados menor, específico para uma tarefa ou idioma específico,.
 
 Vantagens e Limitações:
 

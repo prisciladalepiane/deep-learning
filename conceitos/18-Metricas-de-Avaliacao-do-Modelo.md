@@ -31,14 +31,12 @@ A curva ROC mostra a performance do modelo em todos os limiares de classificaç�
 
 Fornece uma visão detalhada do desempenho do modelo, mostrando a distribuição das previsões em relação aos valores reais através de verdadeiros positivos, falsos positivos, verdadeiros negativos e falsos negativos.
 
-### 7. Sensibilidade e Especificidade
+### 7. Especificidade
 
-Sensibilidade (ou recall) mede a proporção de positivos reais identificados corretamente, enquanto a especificidade mede a proporção de negativos reais identificados corretamente.
+Mede a proporção de negativos reais identificados corretamente. _“Dos negativos reais, quantos eu acertei?”_
 
 ### 8. Taxa de Falsos Positivos (False Positive Rate, FPR)
 
 Mede a proporção de falsos positivos em relação ao total de casos negativos reais.
 
-A escolha da métrica adequada depende do problema específico e dos objetivos do modelo. Por exemplo, em aplicações médicas onde é vital não perder casos positivos, o recall pode ser mais importante.
-
-Em outros cenários onde os falsos positivos têm um custo alto, a precisão pode ser priorizada.
+> A escolha da métrica adequada depende do problema específico e dos objetivos do modelo. Por exemplo, em aplicações médicas onde é vital não perder casos positivos, o recall pode ser mais importante. Em outros cenários onde os falsos positivos têm um custo alto, a precisão pode ser priorizada.
