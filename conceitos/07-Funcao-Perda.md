@@ -39,9 +39,6 @@ Quanto **menor o valor da perda**, **melhor o modelo está aprendendo**.
 | **Classificação com Margem** | **Hinge Loss** | $$L = \max(0, 1 - y \cdot \hat{y})$$ | Usada em SVMs — força as classes a ficarem separadas por uma margem. |
 
 
-## Intuição
-
-Pense na **função de perda** como um **termômetro de aprendizado**:
 - Se o valor da perda é **alto**, o modelo está errando muito.
 - Se o valor da perda é **baixo**, o modelo está se aproximando da resposta correta.
 
@@ -57,28 +54,10 @@ $$
 
 Esse valor representa o erro que o modelo cometeu nessa predição.
 
----
 
-## Em resumo
-<center>
+## Função de Perda em Machine Learning
 
-| Conceito | Explicação |
-|-----------|------------|
-| **Função de perda** | Mede o erro entre a previsão e o valor real. |
-| **Objetivo do treinamento** | Minimizar essa perda. |
-| **Usada em** | Regressão, classificação e outros tipos de tarefas. |
-| **Ligação com Backpropagation** | É a fonte do erro que será retropropagado para atualizar os pesos. |
-
-</center>
-
-previsão → perda → ajuste → nova previsão
-
-
----
-
-# O Que é Função de Perda?
-
-A função de perda, frequentemente referida como função de custo, função de erro ou função objetivo, é uma parte essencial dos algoritmos de  aprendizado de máquina e Deep Learning. Ela quantifica o quão bem as previsões de um modelo se alinham com os valores reais observados. Em outras palavras, ela fornece uma medida do erro entre as previsões do modelo e os dados verdadeiros. Durante o treinamento de um modelo, o objetivo principal é minimizar essa função de perda.
+A função de perda, frequentemente referida como **função de custo**, **função de erro** ou **função objetivo**, é uma parte essencial dos algoritmos de  aprendizado de máquina e Deep Learning. Ela quantifica o quão bem as previsões de um modelo se alinham com os valores reais observados. Em outras palavras, ela fornece uma medida do erro entre as previsões do modelo e os dados verdadeiros. Durante o treinamento de um modelo, o objetivo principal é minimizar essa função de perda.
 
 **Machine Learning é de fato um problema de otimização matemática.** 
 
@@ -102,3 +81,17 @@ Modelos Generativos: Para modelos que geram algum tipo de saída, como Generativ
 Durante o processo de treinamento, o algoritmo ajusta os parâmetros do modelo (como os pesos em uma rede neural) para minimizar a função de perda. A otimização é frequentemente realizada usando técnicas como gradiente descendente ou variantes deste algoritmo.
 
 É importante escolher a função de perda adequada ao problema específico que você está abordando,  pois  a  função  de  perda  determina  como  o  modelo  será  ajustado  durante  o treinamento e pode afetar significativamente o desempenho do modelo final
+
+## Em resumo
+<center>
+
+| Conceito | Explicação |
+|-----------|------------|
+| **Função de perda** | Mede o erro entre a previsão e o valor real. |
+| **Objetivo do treinamento** | Minimizar essa perda. |
+| **Usada em** | Regressão, classificação e outros tipos de tarefas. |
+| **Ligação com Backpropagation** | É a fonte do erro que será retropropagado para atualizar os pesos. |
+
+</center>
+
+previsão → perda → ajuste → nova previsão
