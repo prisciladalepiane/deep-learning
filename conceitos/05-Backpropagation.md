@@ -120,7 +120,7 @@ O Processo de Backpropagation é Composto Pelas Seguintes Etapas:
 • A saída gerada pela rede é comparada com a saída esperada para calcular o erro. Geralmente, usa-se uma função de perda para isso, como o erro quadrático médio.
 
 
-Etapa 3. Propagação Reversa do Erro (Backpropagation):
+## Etapa 3. Propagação Reversa do Erro (Backpropagation):
 
 
 • O erro é então propagado de volta pela rede, começando da última camada até a primeira.
