@@ -79,5 +79,14 @@ O SFFT apresenta várias vantagens, incluindo:
 
 - Ajuste mais rápido e mais preciso do modelo, pois o modelo é treinado com um conjunto de dados específico.
 - Aumento da performance do modelo em relação ao conjunto de dados específico.
-- Possibilidade de treinar modelos pré-treinados para novos conjuntos de dad
+- Possibilidade de treinar modelos pré-treinados para novos conjuntos de dados.
 
+
+---
+**Fine-tuning** = ajustar modelo pronto pra nova tarefa
+
+**PEFT** = fine-tuning "econômico" (poda + ajuste)
+
+**LoRA** = PEFT aplicado a LLMs via adaptadores
+
+**SFTT** = fine-tuning com dados rotulados (supervisionado)
